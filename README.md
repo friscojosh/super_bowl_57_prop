@@ -21,4 +21,4 @@ I ended up running a multi-level binary logistic regression model using `brms` t
 
 Even after accounting for the sportsbook's profit -- or vig -- a bet on "No" has positive expected value. The edge is **14** percentage points, which is large. 
 
-Overall the fit was very nice, the result is interesting and says something important about offensive football both over time and in this season. I'm happy with outcome.
+Overall the fit was very nice, the result is interesting and says something important about offensive football both over time and in this season. I'm happy with outcome. 
