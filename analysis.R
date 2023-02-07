@@ -153,8 +153,8 @@ plot(ce1, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
        subtitle = "Meanwhile the spread doesn't seem to matter")
 
 
-wager <- c(50, .668)
-# let's look at the indicator for playoff games
+wager <- c(50, .668) # the details of the wager
+# conditional effects of the total
 ce2 <- conditional_effects(sb_model, effects = "total")
 plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
   geom_point(aes(x = wager[1], y = wager[2]), size = 3, shape = 21, color = "gray", fill = "orange") +
