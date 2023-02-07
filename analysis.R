@@ -3,9 +3,6 @@ library(nflreadr)
 library(httr)
 library(odds.converter)
 # prop to analyze: 3 straight scores by either team. 
-# note I am assuming this does not require scores on three straight POSSESSIONS.
-# i.e. team A could score, then team B could have two consecutive drives where they do not score,
-# then team A scores, team B does not score, and finally team A scores a third time.
 # odds: yes -201 no +150
 # https://www.betonline.ag/sportsbook/props
 
