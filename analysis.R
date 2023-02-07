@@ -55,44 +55,19 @@ scoring_drives <- nflreadr_pbp_clean |>
   ungroup() |>
   arrange(game_id, drive) # ensure drives are in the order they occur so we can do lag/lead stuff
 
-# identify instances where a team scores three consecutive times in a game when they alternate dives with the opposing team.
-alternating_drives <- scoring_drives |>
+# identify instances where three consecutive scores occur in a game.
+three_straight_scores <- scoring_drives |>
   group_by(game_id) |>
   # to make this intuitive in the results, we have to code it in a way that is slightly confusing.
   # instead of starting with a drive and counting forwards, we find a drive and then count backwards in time.
-  mutate(three_in_a_row = ifelse( (lag(drive_ended_with_score, n = 4) == 1 & lag(posteam, n = 4) == posteam) & # check that three drives in the past that the team scored
-                                  (lag(drive_ended_with_score == 0, n = 3) & lag(posteam, n = 3) != posteam) & # check that the opposing team did not score
-                                  (lag(drive_ended_with_score == 1, n = 2) & lag(posteam, n = 2) == posteam) & # check that the team's previous drive was a score. that would make it back to back scores
-                                  (lag(drive_ended_with_score == 0, n = 1) & lag(posteam, n = 1) != posteam) & # check that the previous drive was not a scoring drive, and it was the opposing team's drive
-                                    drive_ended_with_score == 1, 1, 0)) |> # check that this drive was a score.
+  mutate(three_in_a_row = ifelse(lag(drive_ended_with_score, n = 2) == 1 & 
+                                 lag(drive_ended_with_score, n = 1) == 1 & 
+                                 drive_ended_with_score == 1, 1, 0)) |> 
   dplyr::select(game_id, old_game_id, week, posteam, defteam, drive, drive_ended_with_score, three_in_a_row, spread, total)
-view(alternating_drives)
+view(three_straight_scores)
 
-alternating_drives |> 
+three_straight_scores |> 
   ungroup() |> 
   filter(!is.na(three_in_a_row)) |> 
   summarize(three_in_a_row = sum(three_in_a_row))
-# 365 occurrences
-
-# identify three in a row situations where the team has the ball and scores on
-# consecutive possessions followed by the opposing team failing to score, and
-# then the team scores a third time.
-two_one_one_pattern <- scoring_drives |>
-  group_by(game_id) |>
-  # to make this intuitive in the results, we have to code it in a way that is slightly confusing.
-  # instead of starting with a drive and counting forwards, we find a drive and then count backwards in time.
-  mutate(three_in_a_row = ifelse(   (lag(drive_ended_with_score == 1, n = 3) & lag(posteam, n = 3) == posteam) & # check that the team scored a third time
-                                    (lag(drive_ended_with_score == 0, n = 2) & lag(posteam, n = 2) != posteam) & # check that the opponent's previous drive not was a score.
-                                    (lag(drive_ended_with_score == 1, n = 1) & lag(posteam, n = 1) == posteam) & # check that the previous drive also was a scoring drive, and it was the same team
-                                    drive_ended_with_score == 1, 1, 0)) |> # check that this drive was a score.
-  dplyr::select(game_id, old_game_id, week, posteam, defteam, drive, drive_ended_with_score, three_in_a_row, spread, total)
-
-two_one_one_pattern |> 
-  ungroup() |> 
-  filter(!is.na(three_in_a_row)) |> 
-  summarize(three_in_a_row = sum(three_in_a_row))
-# 12 occurrences
-
-view(two_one_one_pattern)
-
-
+# 875 occurrences
