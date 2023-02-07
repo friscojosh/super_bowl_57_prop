@@ -5,7 +5,7 @@ The prop for this analysis came from [BetOnline.ag](https://www.betonline.ag/spo
 3 straight scores by either team is somewhat ambiguous, but I am taking it to mean that
 we are betting on if there will be three consecutive scores, with either team doing the scoring.
 
-So it could be teamA-TeamA-TeamB, teamA-TeamB-TeamBm teamB-TeamB-TeamB, any of which would win a bet on yes.
+So it could be TeamA-TeamA-TeamB, TeamA-TeamB-TeamB TeamB-TeamB-TeamB, any of which would win a bet on yes.
 
 Play by play data is from `nflreadr`. The columns I used were:
 - `game_id`: alpha-numeric game id
