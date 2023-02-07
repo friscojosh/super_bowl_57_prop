@@ -211,6 +211,30 @@ predicted_values |>
 # 12 2021                 0.549
 # 13 2022                 0.463
 
+# need more data to justify a table. Let's add in the number of games three-in-a-row occured.
+# maybe I'll add in a measure to passing efficiency from profootballreference as well since they seem to track.
+occurances <- three_straight_scores |> 
+  ungroup() |> 
+  filter(!is.na(three_in_a_row)) |> 
+  group_by(season) |>
+  summarize(three_in_a_row = sum(three_in_a_row))
+
+pct_of_games <- three_straight_scores |>
+  ungroup() |>
+  filter(!is.na(three_in_a_row)) |>
+  group_by(game_id) |>
+  summarize(three_in_a_row = max(three_in_a_row),
+            season = max(season)) |>
+  mutate(three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |> # just to ensure we didn't get a value over 1 with the max() function for some reason
+  group_by(season) |> 
+  summarise(pct = mean(three_in_a_row))
+
+table <- occurances |>
+  inner_join(pct_of_games, by = "season")
+
+# export for carpenter
+write_csv(table, "table.csv")
+
 # let's input the bet we're actually interested in
 the_super_bowl <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "playoff" = 1)
 
@@ -243,7 +267,7 @@ the_mean <- function(data, indices) {
   return(mean(d))
 }
 
-boot.means <- boot(data = the_super_bowl$.prediction, statistic = the_mean, R = 10000, parallel = "multicore") # boot with 500 iterations.
+boot.means <- boot(data = the_super_bowl$.prediction, statistic = the_mean, R = 10000, parallel = "multicore") # boot with 10,000 iterations.
 data <- as_tibble(boot.means$t)
 colnames(data) <- c("probability_of_three_scores") # fix up the col name
 
