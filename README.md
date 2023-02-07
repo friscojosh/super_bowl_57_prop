@@ -19,6 +19,6 @@ Play by play data is from `nflreadr`. The columns I used were:
 
 I ended up running a multi-level binary logistic regression model using `brms` to predict the probability that a game will have three straight scores or not. I used Vegas total, spread, an indicator for playoffs vs regular season and the season as predictors. Spread was pretty useless. There appear to be slightly fewer "3 straight score" events in the playoffs vs the regular season, even when accounting for season and Vegas total. 
 
-Even after accounting for the sportsbook's profit -- or vig -- a bet on "No" has positive expected value. The edge is **14** percentage points, which is large. 
+Even after accounting for the sportsbook's profit -- or vig -- a bet on "No" has positive expected value. The edge is **5** percentage points, which is large. 
 
 Overall the fit was very nice, the result is interesting and says something important about offensive football both over time and in this season. I'm happy with outcome. 
