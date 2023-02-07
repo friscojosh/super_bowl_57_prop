@@ -1,0 +1,1198 @@
+value,scope,type,description,column_format
+eliasTeamId,ENTITY,INT,Elias Player ID,event.eliasTeamId
+fullName,ENTITY,STRING,Full Name,event.fullName
+abbrevName,ENTITY,STRING,Abbreviated Name,event.abbrevName
+seasonYear,SEASON,INT,Season Year,event.seasonYear
+seasonType,SEASON,ENUM,Season Type,event.seasonType
+week,GAME,INT,Week,event.week
+gameDate,GAME,DATE,Game Date,event.gameDate
+eliasGameId,GAME,INT,Elias Game ID,event.eliasGameId
+gsisGameKey,GAME,INT,NFL GSIS Game ID,event.gsisGameKey
+playId,GAME_EVENT,INT,Id of the play,event.playId
+quarter,GAME_EVENT,INT,Quarter,event.quarter
+gameClock,GAME_EVENT,INT,Game Clock,event.gameClock
+playType,GAME_EVENT,ENUM,Play Type,event.playType
+playTypePrecise,GAME_EVENT,ENUM,Precise Play Type,event.playTypePrecise
+espnSDRGameId,GAME,INT,ESPN SDR Game Id,event.espnSDRGameId
+espnSDWGameId,GAME,INT,ESPN SDW Game Id,event.espnSDWGameId
+espnMostRecentTeamId,ENTITY,INT,ESPN Team Id in Most Recent Game Data,event.espnMostRecentTeamId
+espnEfficiencyData,GAME,FLAG,Has ESPN Efficiency data,event.espnEfficiencyData
+espnHasOddsData,GAME,FLAG,ESPN Has Odds Data,event.espnHasOddsData
+espnOddsTotalUnder,GAME,FLAG,ESPN Odds Over Under Total Under,event.espnOddsTotalUnder
+espnPlayParticipationData,GAME,FLAG,ESPN Participation Data,event.espnPlayParticipationData
+espnSDRSeasonId,GAME,INT,ESPN SDW Season Id,event.espnSDRSeasonId
+espnSDWSeasonId,GAME,INT,ESPN SDW Season Id,event.espnSDWSeasonId
+espnThrowTimingData,GAME,FLAG,ESPN Throw Timing Data,event.espnThrowTimingData
+espnVATData,GAME,FLAG,Has ESPN VAT data,event.espnVATData
+espnGameTeamId,GAME_ENTITY,INT,ESPN Team Id in Game Data,event.espnGameTeamId
+espnOddsCoverLoss,GAME_ENTITY,FLAG,ESPN Odds Cover Loss for Team,event.espnOddsCoverLoss
+espnOddsCoverWin,GAME_ENTITY,FLAG,ESPN Odds Cover Win for Team,event.espnOddsCoverWin
+espnBoxCount,GAME_EVENT,INT,Box Count,event.espnBoxCount
+espnDBPassRushersCount,GAME_EVENT,INT,DB Rusher Count,event.espnDBPassRushersCount
+espnLeverageIndex,GAME_EVENT,FLOAT,ESPN Leverage Index,event.espnLeverageIndex
+espnPassRushersCount,GAME_EVENT,INT,Rusher Count,event.espnPassRushersCount
+espnPlayId,GAME_EVENT,INT,ESPN Unique Play Group Id,event.espnPlayId
+espnRBCount,GAME_EVENT,INT,RB Count,event.espnRBCount
+espnTECount,GAME_EVENT,INT,TE Count,event.espnTECount
+espnVatPlaySubtype,GAME_EVENT,ENUM,ESPN VAT Play Subtype,event.espnVatPlaySubtype
+espnVatPlayType,GAME_EVENT,ENUM,ESPN VAT Play Type,event.espnVatPlayType
+espnWRCount,GAME_EVENT,INT,WR Count,event.espnWRCount
+espnEndEp,GAME_EVENT_ENTITY,FLOAT,ESPN Team End EP,event.espnEndEp
+espnEndWp,GAME_EVENT_ENTITY,FLOAT,ESPN Team End WP,event.espnEndWp
+espnEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Team EPA,event.espnEpa
+espnStartEp,GAME_EVENT_ENTITY,FLOAT,ESPN Team Start EP,event.espnStartEp
+espnStartWp,GAME_EVENT_ENTITY,FLOAT,ESPN Team Start WP,event.espnStartWp
+espnWpa,GAME_EVENT_ENTITY,FLOAT,ESPN Team WPA,event.espnWpa
+espnAirYards,GAME_EVENT,INT,Air Yards,event.espnAirYards
+espnCatchArea,GAME_EVENT,ENUM,ESPN Area relative to receiver catch was made,event.espnCatchArea
+espnContactDistToGoal,GAME_EVENT,INT,ESPN Contact distance to goal,event.espnContactDistToGoal
+espnCwPlays,GAME_EVENT,FLOAT,ESPN Clutch Weighted Play Count,event.espnCwPlays
+espnDefFormation,GAME_EVENT,ENUM,ESPN Def Formation,event.espnDefFormation
+espnDirection,GAME_EVENT,INT,ESPN Direction,event.espnDirection
+espnLoaded,GAME_EVENT,ENUM,ESPN Loaded,event.espnLoaded
+espnMotionType,GAME_EVENT,ENUM,ESPN Type of Motion,event.espnMotionType
+espnOffFormation,GAME_EVENT,ENUM,ESPN Off Formation,event.espnOffFormation
+espnPlayFromShotgun,GAME_EVENT,FLAG,Shotgun,event.espnPlayFromShotgun
+espnPocket,GAME_EVENT,ENUM,ESPN Pocket,event.espnPocket
+espnPreciseDirection,GAME_EVENT,INT,ESPN Precise Direction,event.espnPreciseDirection
+espnShotgun,GAME_EVENT,ENUM,Shotgun,event.espnShotgun
+espnThrownToDistToGoal,GAME_EVENT,INT,Thrown to distance to goal,event.espnThrownToDistToGoal
+espnTimeBeforePass,GAME_EVENT,FLOAT,ESPN Time Before Pass,event.espnTimeBeforePass
+espnTimeInPocket,GAME_EVENT,FLOAT,ESPN Time In Pocket,event.espnTimeInPocket
+espnTip1,GAME_EVENT,FLOAT,ESPN Time In Pocket 1,event.espnTip1
+espnVatPlay,GAME_EVENT,ENUM,ESPN VAT Play,event.espnVatPlay
+espnVatResult,GAME_EVENT,ENUM,ESPN VAT Result,event.espnVatResult
+espnYardsAfterCatch,GAME_EVENT,INT,Yards After the Catch,event.espnYardsAfterCatch
+espnYardsAfterContact,GAME_EVENT,INT,Yards After Contact,event.espnYardsAfterContact
+espnYardsBeforeContact,GAME_EVENT,INT,Yards Before Contact,event.espnYardsBeforeContact
+espnActionPlay,GAME_EVENT_ENTITY,FLAG,ESPN Action Play,event.espnActionPlay
+espnCwEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted QB EPA,event.espnCwEpa
+espnCwPassEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Pass EPA,event.espnCwPassEpa
+espnCwTotalEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted QB EPA,event.espnCwTotalEpa
+espnCwYacEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Yac EPA,event.espnCwYacEpa
+espnDIntEpa,GAME_EVENT_ENTITY,FLOAT,ESPN D Int EPA,event.espnDIntEpa
+espnPassEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Pass EPA,event.espnPassEpa
+espnTarget,GAME_EVENT_ENTITY,FLAG,ESPN Target,event.espnTarget
+espnTotalEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Total QB EPA,event.espnTotalEpa
+espnYacEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Yac EPA,event.espnYacEpa
+espnDuressOrHit,GAME_EVENT,ENUM,ESPN Duress Or Hit,event.espnDuressOrHit
+espnFirstPressurePlayerId,GAME_EVENT,INT,ESPN Id of First Player to create Pressure,event.espnFirstPressurePlayerId
+espnPaOrDraw,GAME_EVENT,ENUM,ESPN PA or Draw,event.espnPaOrDraw
+espnTip2,GAME_EVENT,FLOAT,ESPN Time In Pocket 2,event.espnTip2
+espnFirstPressure,GAME_EVENT_ENTITY,FLAG,ESPN First Player to create Pressure,event.espnFirstPressure
+espnPlayAbortedPenalty,GAME_EVENT,FLAG,ESPN Play Aborted Penalty,event.espnPlayAbortedPenalty
+espnCwPenaltyEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Penalty EPA,event.espnCwPenaltyEpa
+espnPenaltyEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Penalty EPA,event.espnPenaltyEpa
+espnPassDefended,GAME_EVENT_ENTITY,FLAG,ESPN Pass Defended,event.espnPassDefended
+espnExtraInfo,GAME_EVENT,ENUM,ESPN Note about extra info,event.espnExtraInfo
+espnCwIntEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Int EPA,event.espnCwIntEpa
+espnIntEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Int EPA,event.espnIntEpa
+espnCwScrambleEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Scramble EPA,event.espnCwScrambleEpa
+espnScrambleEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Scramble EPA,event.espnScrambleEpa
+espnCwRushEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Rush EPA,event.espnCwRushEpa
+espnRushEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Rush EPA,event.espnRushEpa
+espnCwSackedEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Sacked EPA,event.espnCwSackedEpa
+espnSackedEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Sacked EPA,event.espnSackedEpa
+espnPassBatted,GAME_EVENT_ENTITY,FLAG,ESPN Pass Batted,event.espnPassBatted
+espnDroppedInt,GAME_EVENT,FLAG,ESPN Dropped Interception on Play,event.espnDroppedInt
+espnDefDroppedInt,GAME_EVENT_ENTITY,FLAG,ESPN Player/Team Dropped Interception,event.espnDefDroppedInt
+espnCwFumbleEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Clutch Weighted Fumble EPA,event.espnCwFumbleEpa
+espnFumbleEpa,GAME_EVENT_ENTITY,FLOAT,ESPN Fumble EPA,event.espnFumbleEpa
+espnNotContacted,GAME_EVENT,FLAG,ESPN Not Contacted Flag,event.espnNotContacted
+espnOddsCoverPush,GAME_ENTITY,FLAG,ESPN Odds Cover Push for Team,event.espnOddsCoverPush
+espnOddsTotalOver,GAME,FLAG,ESPN Odds Over Under Total Over,event.espnOddsTotalOver
+espnOddsTotalPush,GAME,FLAG,ESPN Odds Over Under Total Push,event.espnOddsTotalPush
+espnPassTipped,GAME_EVENT_ENTITY,FLAG,ESPN Pass Tipped,event.espnPassTipped
+espnPlayAbortedFumble,GAME_EVENT,FLAG,ESPN Play Aborted Fumble,event.espnPlayAbortedFumble
+espnQbrQualified,GAME_ENTITY,FLAG,ESPN QBR Game Qualified,event.espnQbrQualified
+espnScrambleYards,GAME_EVENT,INT,ESPN Scramble Yards,event.espnScrambleYards
+espnThrownToSticks,GAME_EVENT,FLAG,Thrown To Sticks,event.espnThrownToSticks
+espnPlayEPA,GAME_EVENT,FLOAT,ESPN Possesion Team EPA,event.espnPlayEPA
+espnTimeBeforePassMillis,GAME_EVENT,INT,Time Before Pass (milliseconds),event.espnTimeBeforePassMillis
+espnTargetPositionGroup,GAME_EVENT,ENUM,ESPN Target Position Detailed Group,event.espnTargetPositionGroup
+espnPlayPositionRight,GAME_EVENT_ENTITY,FLAG,NULL,event.espnPlayPositionRight
+espnPlayPositionLeft,GAME_EVENT_ENTITY,FLAG,NULL,event.espnPlayPositionLeft
+espnRusherPositionGroup,GAME_EVENT,ENUM,ESPN Rusher Position Detailed Group,event.espnRusherPositionGroup
+espnPlayPositionSlot,GAME_EVENT_ENTITY,FLAG,NULL,event.espnPlayPositionSlot
+espnPlayIdMappingData,GAME,FLAG,Has ESPN Play Id Mapping Data,event.espnPlayIdMappingData
+espnUnqplyGroup,GAME_EVENT,INT,ESPN Unique Play Group Id,event.espnUnqplyGroup
+espnUnqplyGroupMissing,GAME_EVENT,FLAG,ESPN Unique Play Group Id Mapping is Missing,event.espnUnqplyGroupMissing
+espnUnqplyGroupDiff,GAME_EVENT,FLAG,ESPN Unique Play Group Id Differs from NFL Play Id,event.espnUnqplyGroupDiff
+espnInPassRush,GAME_EVENT_ENTITY,FLAG,NULL,event.espnInPassRush
+espnInPassBlock,GAME_EVENT_ENTITY,FLAG,NULL,event.espnInPassBlock
+espnInCoverage,GAME_EVENT_ENTITY,FLAG,NULL,event.espnInCoverage
+espnDriveStartWP,GAME_EVENT_ENTITY,FLOAT,ESPN Drive Start Win Probability,event.espnDriveStartWP
+espnDriveWPA,GAME_EVENT_ENTITY,FLOAT,ESPN Drive Win Probability Added,event.espnDriveWPA
+espnDriveStartEP,GAME_EVENT_ENTITY,FLOAT,ESPN Drive Start Expected Points,event.espnDriveStartEP
+espnDriveEPA,GAME_EVENT_ENTITY,FLOAT,ESPN Drive Expected Points Added,event.espnDriveEPA
+espnDropback,GAME_EVENT,FLAG,Is play an ESPN dropback,event.espnDropback
+espnTargetId,GAME_EVENT,INT,ESPN Target ID,event.espnTargetId
+espnTargetPosition,GAME_EVENT,ENUM,ESPN Target Position,event.espnTargetPosition
+conference,ENTITY,ENUM,Conference,event.conference
+division,ENTITY,ENUM,Division,event.division
+hasNFLData,ENTITY,FLAG,Has NFL Data,event.hasNFLData
+leagueName,ENTITY,ENUM,League Name,event.leagueName
+locationName,ENTITY,STRING,Location Name,event.locationName
+teamId,ENTITY,INT,ESPN Team ID,event.teamId
+teamName,ENTITY,STRING,Team Name,event.teamName
+token,ENTITY,STRING,Token,event.token
+nfl,SEASON,FLAG,NFL Season,event.nfl
+openingCoinTossChoice,GAME,ENUM,Opening Coin Toss Selection,event.openingCoinTossChoice
+refName,GAME,ENUM,Referee Name,event.refName
+status,GAME,ENUM,Game Status,event.status
+temperature,GAME,INT,Temperature,event.temperature
+venueName,GAME,ENUM,Venue Name,event.venueName
+away,GAME_ENTITY,FLAG,Away Team,event.away
+finalScore,GAME_ENTITY,INT,Final Score,event.finalScore
+finalScoreDiff,GAME_ENTITY,INT,Final Score Difference,event.finalScoreDiff
+finalScoreOpponent,GAME_ENTITY,INT,Final Opponent Score,event.finalScoreOpponent
+gameConference,GAME_ENTITY,ENUM,Conference at time of Game,event.gameConference
+gameDivision,GAME_ENTITY,ENUM,Division at time of Game,event.gameDivision
+gameLeagueName,GAME_ENTITY,ENUM,League Name at time of Game,event.gameLeagueName
+gamePlayed,GAME_ENTITY,FLAG,Game Played,event.gamePlayed
+loss,GAME_ENTITY,FLAG,Loss,event.loss
+home,GAME_ENTITY,FLAG,Home Team,event.home
+win,GAME_ENTITY,FLAG,Win,event.win
+wonOpeningCoinToss,GAME_ENTITY,FLAG,Won Opening Coin Toss,event.wonOpeningCoinToss
+gameSub,GAME_ENTITY,FLAG,Game Sub,event.gameSub
+gameStarted,GAME_ENTITY,FLAG,Game Started,event.gameStarted
+gameInactive,GAME_ENTITY,FLAG,Game Inactive,event.gameInactive
+gameDNP,GAME_ENTITY,FLAG,Game DNP,event.gameDNP
+drive,GAME_EVENT,FLAG,Drive,event.drive
+driveEndDistance,GAME_EVENT,INT,Drive End Distance,event.driveEndDistance
+driveEndingClock,GAME_EVENT,INT,Drive Ending Game Clock,event.driveEndingClock
+driveEndQuarter,GAME_EVENT,INT,Drive End Quarter,event.driveEndQuarter
+driveHowEnded,GAME_EVENT,ENUM,Drive How Ended,event.driveHowEnded
+driveHowStarted,GAME_EVENT,ENUM,Drive How Started,event.driveHowStarted
+driveNumber,GAME_EVENT,INT,Drive Number,event.driveNumber
+drivePasses,GAME_EVENT,INT,Drive Passes,event.drivePasses
+drivePlays,GAME_EVENT,INT,Drive Plays,event.drivePlays
+driveRushes,GAME_EVENT,INT,Drive Rushes,event.driveRushes
+driveSacks,GAME_EVENT,INT,Drive Sacks,event.driveSacks
+driveScoreResult,GAME_EVENT,INT,Drive Score Result,event.driveScoreResult
+driveScoreSituation,GAME_EVENT,ENUM,Drive Score Situation,event.driveScoreSituation
+driveStartDistance,GAME_EVENT,INT,Drive Start Distance,event.driveStartDistance
+driveStartingClock,GAME_EVENT,INT,Drive Starting Game Clock,event.driveStartingClock
+driveStartQuarter,GAME_EVENT,INT,Drive Start Quarter,event.driveStartQuarter
+driveTimeOfPossession,GAME_EVENT,INT,Drive Possession Seconds,event.driveTimeOfPossession
+driveYards,GAME_EVENT,INT,Drive Yards,event.driveYards
+driveDefenseTeamScore,GAME_EVENT_ENTITY,INT,Drive Defensive Team Score,event.driveDefenseTeamScore
+driveTeamOnDefense,GAME_EVENT_ENTITY,FLAG,Drive Defensive Team,event.driveTeamOnDefense
+driveOffenseTeamScore,GAME_EVENT_ENTITY,INT,Drive Offensive Team Score,event.driveOffenseTeamScore
+driveTeamOnOffense,GAME_EVENT_ENTITY,FLAG,Drive Offensive Team,event.driveTeamOnOffense
+distToFirstStart,GAME_EVENT,INT,Distance to First Start,event.distToFirstStart
+eventNumberInDrive,GAME_EVENT,INT,Event Number In Drive,event.eventNumberInDrive
+goalDistStart,GAME_EVENT,INT,Distance to Goal Start,event.goalDistStart
+play,GAME_EVENT,FLAG,Play,event.play
+playGroupId,GAME_EVENT,INT,GSIS Play Group ID,event.playGroupId
+assist,GAME_EVENT_ENTITY,INT,Assist,event.assist
+currentScore,GAME_EVENT_ENTITY,INT,Current Score,event.currentScore
+kicker,GAME_EVENT_ENTITY,FLAG,Kicker,event.kicker
+kickoff,GAME_EVENT_ENTITY,FLAG,Kickoff,event.kickoff
+tackle,GAME_EVENT_ENTITY,INT,Tackle,event.tackle
+kickoffReturn,GAME_EVENT_ENTITY,FLAG,Kickoff Return,event.kickoffReturn
+nonKicker,GAME_EVENT_ENTITY,FLAG,Non Kicker,event.nonKicker
+returner,GAME_EVENT_ENTITY,FLAG,Returner,event.returner
+downEnd,GAME_EVENT,INT,Down End,event.downEnd
+downStart,GAME_EVENT,INT,Down Start,event.downStart
+defense,GAME_EVENT_ENTITY,FLAG,Defense,event.defense
+offense,GAME_EVENT_ENTITY,FLAG,Offense,event.offense
+rush,GAME_EVENT_ENTITY,FLAG,Rush,event.rush
+rusher,GAME_EVENT_ENTITY,FLAG,Rusher,event.rusher
+rushYards,GAME_EVENT_ENTITY,INT,Rush Yards,event.rushYards
+penaltyYards,GAME_EVENT_ENTITY,INT,Penalty Yards,event.penaltyYards
+possPenalties,GAME_EVENT_ENTITY,INT,Possession Penalties,event.possPenalties
+possPenaltiesAccepted,GAME_EVENT_ENTITY,INT,Possession Penalties Accepted,event.possPenaltiesAccepted
+passResult,GAME_EVENT,ENUM,Pass Result,event.passResult
+attempt,GAME_EVENT_ENTITY,INT,Attempt,event.attempt
+passer,GAME_EVENT_ENTITY,FLAG,Passer,event.passer
+passYards,GAME_EVENT_ENTITY,INT,Pass Attempt Yards,event.passYards
+target,GAME_EVENT_ENTITY,FLAG,Target,event.target
+defSack,GAME_EVENT_ENTITY,FLAG,Defensive Sack,event.defSack
+sacked,GAME_EVENT_ENTITY,FLAG,Sacked,event.sacked
+sackYards,GAME_EVENT_ENTITY,INT,Sack Yards,event.sackYards
+puntFairCatch,GAME_EVENT,FLAG,Punt Fair Catch,event.puntFairCatch
+fairCatch,GAME_EVENT_ENTITY,FLAG,Fair Catch,event.fairCatch
+punt,GAME_EVENT_ENTITY,FLAG,Punt,event.punt
+rushFirstDown,GAME_EVENT_ENTITY,FLAG,Rush First Down,event.rushFirstDown
+puntInside20,GAME_EVENT,FLAG,Punt Inside 20,event.puntInside20
+puntOutOfBounds,GAME_EVENT,FLAG,Punt Out of Bounds,event.puntOutOfBounds
+puntDowned,GAME_EVENT,FLAG,Punt Downed,event.puntDowned
+completion,GAME_EVENT_ENTITY,FLAG,Completion,event.completion
+receiver,GAME_EVENT_ENTITY,FLAG,Receiver,event.receiver
+reception,GAME_EVENT_ENTITY,FLAG,Reception,event.reception
+recYards,GAME_EVENT_ENTITY,INT,Reception Yards,event.recYards
+timeout,GAME_EVENT,FLAG,Timeout,event.timeout
+timeoutTaken,GAME_EVENT_ENTITY,FLAG,Timeout Taken,event.timeoutTaken
+puntReturn,GAME_EVENT_ENTITY,FLAG,Punt Return,event.puntReturn
+driveRedZone,GAME_EVENT,FLAG,Drive Red Zone,event.driveRedZone
+passFirstDown,GAME_EVENT_ENTITY,FLAG,Pass First Down,event.passFirstDown
+recFirstDown,GAME_EVENT_ENTITY,FLAG,Reception First Down,event.recFirstDown
+fg,GAME_EVENT_ENTITY,FLAG,FG,event.fg
+fga,GAME_EVENT_ENTITY,FLAG,FGA,event.fga
+playScore,GAME_EVENT_ENTITY,INT,Play Score,event.playScore
+penaltyFirstDowns,GAME_EVENT_ENTITY,INT,Penalty First Downs,event.penaltyFirstDowns
+goalToGo,GAME_EVENT,FLAG,Goal To Go,event.goalToGo
+defInterception,GAME_EVENT_ENTITY,FLAG,Defensive Interception,event.defInterception
+fumble,GAME_EVENT_ENTITY,INT,Fumble,event.fumble
+fumbleLost,GAME_EVENT_ENTITY,INT,Fumble Lost,event.fumbleLost
+intReturn,GAME_EVENT_ENTITY,FLAG,Interception Return,event.intReturn
+forcedFumble,GAME_EVENT_ENTITY,INT,Forced Fumble,event.forcedFumble
+interception,GAME_EVENT_ENTITY,FLAG,Interception,event.interception
+oppFumbleRecovery,GAME_EVENT_ENTITY,INT,Opponent Fumble Recover,event.oppFumbleRecovery
+rushTD,GAME_EVENT_ENTITY,FLAG,Rush TD,event.rushTD
+xp,GAME_EVENT_ENTITY,FLAG,XP,event.xp
+xpa,GAME_EVENT_ENTITY,FLAG,XPA,event.xpa
+actionPlay,GAME_EVENT_ENTITY,FLAG,Action Play,event.actionPlay
+airYards,GAME_EVENT_ENTITY,INT,Air Yards,event.airYards
+blockedFGA,GAME_EVENT_ENTITY,FLAG,Blocked FGA,event.blockedFGA
+blockedKickRecovery,GAME_EVENT_ENTITY,FLAG,Blocked Kick Recovery,event.blockedKickRecovery
+blockedKickReturn,GAME_EVENT_ENTITY,FLAG,Blocked Kick Return,event.blockedKickReturn
+blockedPAT,GAME_EVENT_ENTITY,FLAG,Blocked PAT,event.blockedPAT
+blockedPunt,GAME_EVENT_ENTITY,FLAG,Blocked Punt,event.blockedPunt
+boxCount,GAME_EVENT,INT,Box Count,event.boxCount
+defConv,GAME_EVENT_ENTITY,FLAG,Defensive Conversion,event.defConv
+defSafety,GAME_EVENT_ENTITY,FLAG,Def Safety,event.defSafety
+driveGoalToGo,GAME_EVENT,FLAG,Drive Goal To Go,event.driveGoalToGo
+endEp,GAME_EVENT_ENTITY,FLOAT,Team End EP,event.endEp
+epa,GAME_EVENT_ENTITY,FLOAT,Team EPA,event.epa
+fgaBlocked,GAME_EVENT,FLAG,FGA Blocked,event.fgaBlocked
+fgReturn,GAME_EVENT_ENTITY,FLAG,FGA Return,event.fgReturn
+fumbleRecoveryTD,GAME_EVENT_ENTITY,INT,Fumble Recovery TD,event.fumbleRecoveryTD
+fumbleReturn,GAME_EVENT_ENTITY,FLAG,Fumble Return,event.fumbleReturn
+huddle,GAME_EVENT,ENUM,Huddle,event.huddle
+kickoffOutOfBounds,GAME_EVENT,FLAG,Kickoff Out of Bounds,event.kickoffOutOfBounds
+kickoffReturnTd,GAME_EVENT,FLAG,Kickoff Return TD,event.kickoffReturnTd
+kickoffTouchBack,GAME_EVENT,FLAG,Kickoff Touch Back,event.kickoffTouchBack
+ncaa,SEASON,FLAG,NCAA Season,event.ncaa
+neutralSite,GAME,FLAG,Neutral Site Flag,event.neutralSite
+offSafety,GAME_EVENT_ENTITY,FLAG,Off Safety,event.offSafety
+onSideKick,GAME_EVENT,FLAG,On Side Kick,event.onSideKick
+onSideRecovered,GAME_EVENT,FLAG,On Side Kick Recovered,event.onSideRecovered
+onSideRecovery,GAME_EVENT_ENTITY,FLAG,On Side Recovery,event.onSideRecovery
+onsideReturn,GAME_EVENT_ENTITY,FLAG,On Side Return,event.onsideReturn
+overtimeCoinTossChoice,GAME,ENUM,Overtime Coin Toss Selection,event.overtimeCoinTossChoice
+ownFumbleRecovery,GAME_EVENT_ENTITY,INT,Own Fumble Recovery,event.ownFumbleRecovery
+passBatted,GAME_EVENT_ENTITY,FLAG,Pass Batted,event.passBatted
+passDefended,GAME_EVENT_ENTITY,FLAG,Pass Defended,event.passDefended
+passTD,GAME_EVENT_ENTITY,FLAG,Pass TD,event.passTD
+passTipped,GAME_EVENT_ENTITY,FLAG,Pass Tipped,event.passTipped
+patReturn,GAME_EVENT_ENTITY,FLAG,PAT Return,event.patReturn
+playAbortedFumble,GAME_EVENT,FLAG,Play Aborted Fumble,event.playAbortedFumble
+playAbortedPenalty,GAME_EVENT,FLAG,Play Aborted Penalty,event.playAbortedPenalty
+puntBlocked,GAME_EVENT,FLAG,Punt Blocked,event.puntBlocked
+puntReturnTd,GAME_EVENT,FLAG,Punt Return TD,event.puntReturnTd
+puntTouchBack,GAME_EVENT,FLAG,Punt Touch Back,event.puntTouchBack
+qbHit,GAME_EVENT,FLAG,QB Hit,event.qbHit
+qbrQualified,GAME_ENTITY,FLAG,QBR Game Qualified,event.qbrQualified
+rbCount,GAME_EVENT,INT,RB Count,event.rbCount
+recTD,GAME_EVENT_ENTITY,FLAG,Reception TD,event.recTD
+shotgun,GAME_EVENT,ENUM,Shotgun,event.shotgun
+splitSack,GAME_EVENT,FLAG,Split Sack,event.splitSack
+startEp,GAME_EVENT_ENTITY,FLOAT,Team Start EP,event.startEp
+teCount,GAME_EVENT,INT,TE Count,event.teCount
+tfl,GAME_EVENT,FLAG,Tackle For Loss,event.tfl
+thrownToDistToGoal,GAME_EVENT,INT,Thrown to distance to goal,event.thrownToDistToGoal
+thrownToSticks,GAME_EVENT,FLAG,Thrown To Sticks,event.thrownToSticks
+tie,GAME_ENTITY,FLAG,Tie,event.tie
+twoPointCompletion,GAME_EVENT_ENTITY,FLAG,Two Point Completion,event.twoPointCompletion
+twoPointConversion,GAME_EVENT_ENTITY,FLAG,Two Point Conversion,event.twoPointConversion
+twoPointConversionAttempt,GAME_EVENT_ENTITY,FLAG,Two Point Conversion Attempt,event.twoPointConversionAttempt
+twoPointPassAttempt,GAME_EVENT_ENTITY,FLAG,Two Point Pass Attempt,event.twoPointPassAttempt
+twoPointPassConversion,GAME_EVENT_ENTITY,FLAG,Two Point Pass Conversion,event.twoPointPassConversion
+twoPointReception,GAME_EVENT_ENTITY,FLAG,Two Point Reception,event.twoPointReception
+twoPointReceptionConversion,GAME_EVENT_ENTITY,FLAG,Two Point Reception Conversion,event.twoPointReceptionConversion
+twoPointRush,GAME_EVENT_ENTITY,FLAG,Two Point Rush Attempt,event.twoPointRush
+twoPointRushConversion,GAME_EVENT_ENTITY,FLAG,Two Point Rush Conversion,event.twoPointRushConversion
+twoPointTarget,GAME_EVENT_ENTITY,FLAG,Two Point Pass Target,event.twoPointTarget
+twoPtAttempter,GAME_EVENT_ENTITY,FLAG,2 Point Conversion Attempter,event.twoPtAttempter
+twoPtDefender,GAME_EVENT_ENTITY,FLAG,2 Point Conversion Defender,event.twoPtDefender
+wallClock,GAME_EVENT,INT,Wall Clock,event.wallClock
+windSpeed,GAME,INT,Wind Speed,event.windSpeed
+wonOvertimeCoinToss,GAME_ENTITY,FLAG,Won Overtime Coin Toss,event.wonOvertimeCoinToss
+wrCount,GAME_EVENT,INT,WR Count,event.wrCount
+xpaBlocked,GAME_EVENT,FLAG,XPA Blocked,event.xpaBlocked
+yardsAfterContact,GAME_EVENT_ENTITY,INT,Yards After Contact,event.yardsAfterContact
+startTime,GAME,INT,Game Start Time,event.startTime
+yac,GAME_EVENT_ENTITY,INT,Yards After the Catch,event.yac
+playGoalToGo,GAME_EVENT,FLAG,Play Goal To Go,event.playGoalToGo
+playRedZone,GAME_EVENT,FLAG,Play Red Zone,event.playRedZone
+pointsOffTurnover,GAME_EVENT_ENTITY,INT,Points Off Turnover,event.pointsOffTurnover
+offensivePoints,GAME_EVENT_ENTITY,INT,Offensive Points,event.offensivePoints
+driveFirstDowns,GAME_EVENT,INT,Drive First Downs,event.driveFirstDowns
+defFantasyPointsYards,GAME_ENTITY,INT,Defensive Fantasy Points for Yards Allowed,event.defFantasyPointsYards
+defFantasyPointsScore,GAME_ENTITY,INT,Defensive Fantasy Points for Points Allowed,event.defFantasyPointsScore
+fantasyPointsAgainstQB,GAME_ENTITY,FLOAT,Fantasy Points Against by QB's,event.fantasyPointsAgainstQB
+fantasyPointsAgainstRB,GAME_ENTITY,FLOAT,Fantasy Points Against by RB's,event.fantasyPointsAgainstRB
+fantasyPointsAgainstWR,GAME_ENTITY,FLOAT,Fantasy Points Against by WR's,event.fantasyPointsAgainstWR
+fantasyPointsAgainstTE,GAME_ENTITY,FLOAT,Fantasy Points Against by TE's,event.fantasyPointsAgainstTE
+fantasyPointsAgainstK,GAME_ENTITY,FLOAT,Fantasy Points Against by K's,event.fantasyPointsAgainstK
+pprFantasyPointsAgainstRB,GAME_ENTITY,FLOAT,PPR Fantasy Points Against by RB's,event.pprFantasyPointsAgainstRB
+pprFantasyPointsAgainstWR,GAME_ENTITY,FLOAT,PPR Fantasy Points Against by WR's,event.pprFantasyPointsAgainstWR
+pprFantasyPointsAgainstTE,GAME_ENTITY,FLOAT,PPR Fantasy Points Against by TE's,event.pprFantasyPointsAgainstTE
+timeSinceLastSnap,GAME_EVENT,INT,Seconds between LOS Snaps,event.timeSinceLastSnap
+downSetConversion,GAME_EVENT_ENTITY,FLAG,This set of downs was converted,event.downSetConversion
+playRoutesRun,GAME_EVENT,INT,Routes Run Count,event.playRoutesRun
+playPositionLeft,GAME_EVENT_ENTITY,FLAG,Play Position Left,event.playPositionLeft
+playPositionRight,GAME_EVENT_ENTITY,FLAG,Play Position Right,event.playPositionRight
+playPositionSlot,GAME_EVENT_ENTITY,FLAG,Play Position Slot,event.playPositionSlot
+passBlockers,GAME_EVENT,INT,Pass Blocker Count,event.passBlockers
+coverageCount,GAME_EVENT,INT,Coverage Count,event.coverageCount
+playTimeInPocket,GAME_EVENT,FLOAT,Time In Pocket,event.playTimeInPocket
+playTimeBeforePass,GAME_EVENT,FLOAT,Time Before Pass,event.playTimeBeforePass
+playoffRound,GAME,ENUM,Playoff Round,event.playoffRound
+playoffWeek,GAME,INT,Playoff Week,event.playoffWeek
+ot,GAME,FLAG,Overtime Game,event.ot
+month,GAME,INT,Month,event.month
+dayOfWeek,GAME,ENUM,Day Of Week,event.dayOfWeek
+finalYards,GAME_ENTITY,INT,Final Yards Gained,event.finalYards
+finalYardsOpponent,GAME_ENTITY,INT,Final Yards Gained by Opponent,event.finalYardsOpponent
+finalYardsDiff,GAME_ENTITY,INT,Final Yard Margin,event.finalYardsDiff
+finalPassYards,GAME_ENTITY,INT,Final Pass Yards Gained,event.finalPassYards
+finalPassYardsOpponent,GAME_ENTITY,INT,Final Pass Yards Gained by Opponent,event.finalPassYardsOpponent
+finalPassYardsDiff,GAME_ENTITY,INT,Final Pass Yard Margin,event.finalPassYardsDiff
+finalRushYards,GAME_ENTITY,INT,Final Rush Yards Gained,event.finalRushYards
+finalRushYardsOpponent,GAME_ENTITY,INT,Final Rush Yards Gained by Opponent,event.finalRushYardsOpponent
+finalRushYardsDiff,GAME_ENTITY,INT,Final Rush Yard Margin,event.finalRushYardsDiff
+finalTurnovers,GAME_ENTITY,INT,Final Turnovers,event.finalTurnovers
+finalTurnoversOpponent,GAME_ENTITY,INT,Final Turnovers by Opponent,event.finalTurnoversOpponent
+finalTurnoversDiff,GAME_ENTITY,INT,Final Turnovers Margin,event.finalTurnoversDiff
+currentScoreOpponent,GAME_EVENT_ENTITY,INT,Current Score Opponent,event.currentScoreOpponent
+currentScoreDiff,GAME_EVENT_ENTITY,INT,Current Score Diff,event.currentScoreDiff
+passerId,GAME_EVENT,INT,Passer ID,event.passerId
+rusherId,GAME_EVENT,INT,Rusher ID,event.rusherId
+targetId,GAME_EVENT,INT,Target ID,event.targetId
+rusherPosition,GAME_EVENT,ENUM,Rusher Position,event.rusherPosition
+targetPosition,GAME_EVENT,ENUM,Target Position,event.targetPosition
+driveDeepestDist,GAME_EVENT,INT,Deepest Drive Distance,event.driveDeepestDist
+playNumInDrive,GAME_EVENT,INT,Play Number In Drive,event.playNumInDrive
+previousPlayYards,GAME_EVENT,INT,Previous Play Yards,event.previousPlayYards
+previousPlayDown,GAME_EVENT,INT,Previous Play Down,event.previousPlayDown
+previousPlayResult,GAME_EVENT,ENUM,Previous Play Result,event.previousPlayResult
+playResult,GAME_EVENT,ENUM,Play Result,event.playResult
+drivePenaltyFirstDowns,GAME_EVENT,INT,Drive Penalty First Downs,event.drivePenaltyFirstDowns
+driveOffPenalties,GAME_EVENT,INT,Drive Offensive Penalties,event.driveOffPenalties
+driveDefPenalties,GAME_EVENT,INT,Drive Defensive Penalties,event.driveDefPenalties
+playAirYards,GAME_EVENT,INT,Air Yards,event.playAirYards
+playAirYardsFromFirstDown,GAME_EVENT,INT,Air Yards Past First Down,event.playAirYardsFromFirstDown
+playYAC,GAME_EVENT,INT,Yards After Catch,event.playYAC
+playYardsAfterContact,GAME_EVENT,INT,Yards After Contact,event.playYardsAfterContact
+playDesc,GAME_EVENT,STRING,Play Description,event.playDesc
+transitionalGame,GAME_ENTITY,FLAG,FBS Transitional Game,event.transitionalGame
+officialGame,GAME_ENTITY,FLAG,Official Game,event.officialGame
+unofficialGame,GAME_ENTITY,FLAG,Unofficial Game,event.unofficialGame
+driveStartTimeouts,GAME_EVENT_ENTITY,INT,Timeouts at the start of the drive,event.driveStartTimeouts
+timeoutsRemaining,GAME_EVENT_ENTITY,INT,Timeouts Remaining in Half,event.timeoutsRemaining
+driveTimeoutsUsed,GAME_EVENT_ENTITY,INT,Timeouts used in drive,event.driveTimeoutsUsed
+teamGameNumber,GAME_ENTITY,INT,Team Game Number in Season,event.teamGameNumber
+hasContactData,GAME,FLAG,Has Contact Data,event.hasContactData
+driveNonTDFirstDowns,GAME_EVENT,INT,Drive Non-TD First Downs,event.driveNonTDFirstDowns
+driveStartingTimeToHalf,GAME_EVENT,INT,Time Left in Half at Start of Drive,event.driveStartingTimeToHalf
+driveStartingTimeToRegulation,GAME_EVENT,INT,Time Left in Regulation at Start of Drive,event.driveStartingTimeToRegulation
+timeToHalf,GAME_EVENT,INT,Time Left in Half,event.timeToHalf
+timeToRegulation,GAME_EVENT,INT,Time Left in Regulation,event.timeToRegulation
+seasonWins,GAME_ENTITY,INT,Season Wins,event.seasonWins
+seasonLosses,GAME_ENTITY,INT,Season Losses,event.seasonLosses
+seasonTies,GAME_ENTITY,INT,Season Ties,event.seasonTies
+seasonWinLossMargin,GAME_ENTITY,INT,Season Win-Loss Margin,event.seasonWinLossMargin
+pregameWins,GAME_ENTITY,INT,Pregame Wins,event.pregameWins
+pregameLosses,GAME_ENTITY,INT,Pregame Losses,event.pregameLosses
+pregameTies,GAME_ENTITY,INT,Pregame Ties,event.pregameTies
+pregameWinLossMargin,GAME_ENTITY,INT,Pregame Win Loss Margin,event.pregameWinLossMargin
+opponentSeasonWins,GAME_ENTITY,INT,Opponent Season Wins,event.opponentSeasonWins
+opponentSeasonLosses,GAME_ENTITY,INT,Opponent Season Losses,event.opponentSeasonLosses
+opponentSeasonTies,GAME_ENTITY,INT,Opponent Season Ties,event.opponentSeasonTies
+opponentSeasonWinLossMargin,GAME_ENTITY,INT,Opponent Season Win-Loss Margin,event.opponentSeasonWinLossMargin
+opponentSeasonWinPercentage,GAME_ENTITY,FLOAT,Opponent Season Win%,event.opponentSeasonWinPercentage
+opponentPregameWins,GAME_ENTITY,INT,Opponent Pregame Wins,event.opponentPregameWins
+opponentPregameLosses,GAME_ENTITY,INT,Opponent Pregame Losses,event.opponentPregameLosses
+opponentPregameTies,GAME_ENTITY,INT,Opponent Pregame Ties,event.opponentPregameTies
+opponentPregameWinLossMargin,GAME_ENTITY,INT,Opponent Pregame Win Loss Margin,event.opponentPregameWinLossMargin
+opponentPregameWinPercentage,GAME_ENTITY,FLOAT,Opponent Pregame Win%,event.opponentPregameWinPercentage
+opponentSeasonExcludedWins,GAME_ENTITY,INT,Opponent Season Excluded Wins,event.opponentSeasonExcludedWins
+opponentSeasonExcludedLosses,GAME_ENTITY,INT,Opponent Season Excluded Losses,event.opponentSeasonExcludedLosses
+opponentSeasonExcludedTies,GAME_ENTITY,INT,Opponent Season Excluded Ties,event.opponentSeasonExcludedTies
+playYardsGained,GAME_EVENT,INT,Yards Gained On Play,event.playYardsGained
+yardsGained,GAME_EVENT_ENTITY,INT,Yards Gained By Team On Play,event.yardsGained
+playPossPenalties,GAME_EVENT,INT,Possession Penalties,event.playPossPenalties
+playOppPossPenalties,GAME_EVENT,INT,Opponent Possession Penalties,event.playOppPossPenalties
+playPossPenaltiesAccepted,GAME_EVENT,INT,Possession Penalties Accepted,event.playPossPenaltiesAccepted
+playOppPossPenaltiesAccepted,GAME_EVENT,INT,Opponent Possession Penalties Accepted,event.playOppPossPenaltiesAccepted
+playPossPenaltyYards,GAME_EVENT,INT,Possession Penalty Yards,event.playPossPenaltyYards
+playOppPossPenaltyYards,GAME_EVENT,INT,Opponent Possession Penalty Yards,event.playOppPossPenaltyYards
+downSetNumber,GAME_EVENT,INT,Sequential Number of Down Set in Game,event.downSetNumber
+replayDown,GAME_EVENT,FLAG,Replay Last Down,event.replayDown
+driveEndedInKneel,GAME_EVENT,FLAG,Drive Ended in a Kneel,event.driveEndedInKneel
+driveStartScore,GAME_EVENT_ENTITY,INT,Drive Start Score,event.driveStartScore
+driveEndScore,GAME_EVENT_ENTITY,INT,Drive End Score,event.driveEndScore
+drivePointsScored,GAME_EVENT_ENTITY,INT,Drive Points Scored,event.drivePointsScored
+gameTimeOfPossession,GAME_ENTITY,INT,Game Time Of Possession,event.gameTimeOfPossession
+inDivGame,GAME,FLAG,In Division Game,event.inDivGame
+inConfGame,GAME,FLAG,In Conference Game,event.inConfGame
+inPower5,GAME_ENTITY,FLAG,In Power 5,event.inPower5
+inGroupOf5,GAME_ENTITY,FLAG,In Group Of 5,event.inGroupOf5
+passerPosition,GAME_EVENT,ENUM,Passer Position,event.passerPosition
+playYardsBeforeContact,GAME_EVENT,INT,Yards Before Contact,event.playYardsBeforeContact
+offenseTeamPenaltyYards,GAME_EVENT,INT,Penalty Yards for the Offense Team,event.offenseTeamPenaltyYards
+defenseTeamPenaltyYards,GAME_EVENT,INT,Penalty Yards for the Defense Team,event.defenseTeamPenaltyYards
+preReceptionFumble,GAME_EVENT,FLAG,Flag indicating a fumble on a reception occured before the pass,event.preReceptionFumble
+receivingFumble,GAME_EVENT_ENTITY,FLAG,Receiving Fumble,event.receivingFumble
+receivingFumbleLost,GAME_EVENT_ENTITY,FLAG,Receiving Fumble Lost,event.receivingFumbleLost
+returningFumble,GAME_EVENT_ENTITY,FLAG,Returning Fumble,event.returningFumble
+returningFumbleLost,GAME_EVENT_ENTITY,FLAG,Returning Fumble Lost,event.returningFumbleLost
+rushingFumble,GAME_EVENT_ENTITY,FLAG,Rushing Fumble,event.rushingFumble
+rushingFumbleLost,GAME_EVENT_ENTITY,FLAG,Rushing Fumble Lost,event.rushingFumbleLost
+teamPossessionNumber,GAME_EVENT,INT,Possession Number for the offense in the game,event.teamPossessionNumber
+reversePossessionNumber,GAME_EVENT,INT,Reverse Possession Number from the end of the game for the offense,event.reversePossessionNumber
+teamHalfPossessionNumber,GAME_EVENT,INT,Possession Number from the start of the half for the offense,event.teamHalfPossessionNumber
+reverseHalfPossessionNumber,GAME_EVENT,INT,Reverse Possession Number from the end of the half for the offense,event.reverseHalfPossessionNumber
+ncaaMajorBowl,GAME,FLAG,Major Bowl Game,event.ncaaMajorBowl
+ncaaNationalChampionship,GAME,FLAG,National Championship,event.ncaaNationalChampionship
+gameLastModified,GAME,DATE,Last Time Game was modified,event.gameLastModified
+outOfConfGame,GAME,FLAG,Out of Conference Game,event.outOfConfGame
+playAirYardsToGoal,GAME_EVENT,INT,Air Yards To Goal,event.playAirYardsToGoal
+thrownToEndZone,GAME_EVENT,FLAG,Thrown To End Zone,event.thrownToEndZone
+teamWarningMajor,GAME_ENTITY,STRING,Major Team Validation Warning,event.teamWarningMajor
+stPlay,GAME_EVENT,FLAG,Special Teams Play,event.stPlay
+qbContact,GAME_EVENT,FLAG,QB Contact,event.qbContact
+q1Score,GAME_ENTITY,INT,First Quarter Score,event.q1Score
+q1ScoreOpponent,GAME_ENTITY,INT,First Quarter Opponent Score,event.q1ScoreOpponent
+q1ScoreDiff,GAME_ENTITY,INT,First Quarter Score Diff,event.q1ScoreDiff
+q2Score,GAME_ENTITY,INT,Second Quarter Score,event.q2Score
+q2ScoreOpponent,GAME_ENTITY,INT,Second Quarter Opponent Score,event.q2ScoreOpponent
+q2ScoreDiff,GAME_ENTITY,INT,Second Quarter Score Diff,event.q2ScoreDiff
+q3Score,GAME_ENTITY,INT,Third Quarter Score,event.q3Score
+q3ScoreOpponent,GAME_ENTITY,INT,Third Quarter Opponent Score,event.q3ScoreOpponent
+q3ScoreDiff,GAME_ENTITY,INT,Third Quarter Score Diff,event.q3ScoreDiff
+q4Score,GAME_ENTITY,INT,Fourth Quarter Score,event.q4Score
+q4ScoreOpponent,GAME_ENTITY,INT,Fourth Quarter Opponent Score,event.q4ScoreOpponent
+q4ScoreDiff,GAME_ENTITY,INT,Fourth Quarter Score Diff,event.q4ScoreDiff
+q12Score,GAME_ENTITY,INT,Score Through Second Quarter,event.q12Score
+q12ScoreOpponent,GAME_ENTITY,INT,Opponent Score Through Second Quarter,event.q12ScoreOpponent
+q12ScoreDiff,GAME_ENTITY,INT,Score Through Second Quarter Diff,event.q12ScoreDiff
+q123Score,GAME_ENTITY,INT,Score Through Third Quarter,event.q123Score
+q123ScoreOpponent,GAME_ENTITY,INT,Opponent Score Through Third Quarter,event.q123ScoreOpponent
+q123ScoreDiff,GAME_ENTITY,INT,Score Through Third Quarter Diff,event.q123ScoreDiff
+q1234Score,GAME_ENTITY,INT,Score Through Fourth Quarter,event.q1234Score
+q1234ScoreOpponent,GAME_ENTITY,INT,Opponent Score Through Fourth Quarter,event.q1234ScoreOpponent
+q1234ScoreDiff,GAME_ENTITY,INT,Score Through Fourth Quarter Diff,event.q1234ScoreDiff
+scoreGameClock,GAME_EVENT,INT,Game Clock at Time of Score,event.scoreGameClock
+playTimeOfPossession,GAME_EVENT,INT,Play Time of Possession,event.playTimeOfPossession
+boxDefensiveInterceptions,GAME_ENTITY,INT,Game Box Defensive Interceptions,event.boxDefensiveInterceptions
+boxDefensiveInterceptionsTds,GAME_ENTITY,INT,Game Box Defensive Interceptions Tds,event.boxDefensiveInterceptionsTds
+boxDefensiveInterceptionsYards,GAME_ENTITY,INT,Game Box Defensive Interceptions Yards,event.boxDefensiveInterceptionsYards
+boxDefensiveSacks,GAME_ENTITY,FLOAT,Game Box Defensive Sacks,event.boxDefensiveSacks
+boxDefensiveSafeties,GAME_ENTITY,INT,Game Box Defensive Safeties,event.boxDefensiveSafeties
+boxFirstdownsTotal,GAME_ENTITY,INT,Game Box Firstdowns Total,event.boxFirstdownsTotal
+boxFumblesLost,GAME_ENTITY,INT,Game Box Fumbles Lost,event.boxFumblesLost
+boxFumblesTotal,GAME_ENTITY,INT,Game Box Fumbles Total,event.boxFumblesTotal
+boxKickingFgAtt,GAME_ENTITY,INT,Game Box Kicking Fg Att,event.boxKickingFgAtt
+boxKickingFgBlk,GAME_ENTITY,INT,Game Box Kicking Fg Blk,event.boxKickingFgBlk
+boxKickingFgMade,GAME_ENTITY,INT,Game Box Kicking Fg Made,event.boxKickingFgMade
+boxKickingXkAtt,GAME_ENTITY,INT,Game Box Kicking Xk Att,event.boxKickingXkAtt
+boxKickingXkBlk,GAME_ENTITY,INT,Game Box Kicking Xk Blk,event.boxKickingXkBlk
+boxKickingXkMade,GAME_ENTITY,INT,Game Box Kicking Xk Made,event.boxKickingXkMade
+boxKickoffTotal,GAME_ENTITY,INT,Game Box Kickoff Total,event.boxKickoffTotal
+boxKickoffTouchbacks,GAME_ENTITY,INT,Game Box Kickoff Touchbacks,event.boxKickoffTouchbacks
+boxKickReturns,GAME_ENTITY,INT,Game Box Kick Returns,event.boxKickReturns
+boxKickReturnsTouchdowns,GAME_ENTITY,INT,Game Box Kick Returns Touchdowns,event.boxKickReturnsTouchdowns
+boxKickReturnsYards,GAME_ENTITY,INT,Game Box Kick Returns Yards,event.boxKickReturnsYards
+boxPassingAttempts,GAME_ENTITY,INT,Game Box Passing Attempts,event.boxPassingAttempts
+boxPassingCompletions,GAME_ENTITY,INT,Game Box Passing Completions,event.boxPassingCompletions
+boxPassingFirstDowns,GAME_ENTITY,INT,Game Box Passing First Downs,event.boxPassingFirstDowns
+boxPassingInterceptions,GAME_ENTITY,INT,Game Box Passing Interceptions,event.boxPassingInterceptions
+boxPassingSacked,GAME_ENTITY,INT,Game Box Passing Sacked,event.boxPassingSacked
+boxPassingSackedYardsLost,GAME_ENTITY,INT,Game Box Passing Sacked Yards Lost,event.boxPassingSackedYardsLost
+boxPassingTouchdowns,GAME_ENTITY,INT,Game Box Passing Touchdowns,event.boxPassingTouchdowns
+boxPassingYards,GAME_ENTITY,INT,Game Box Passing Yards,event.boxPassingYards
+boxPuntingBlocked,GAME_ENTITY,INT,Game Box Punting Blocked,event.boxPuntingBlocked
+boxPuntingPunts,GAME_ENTITY,INT,Game Box Punting Punts,event.boxPuntingPunts
+boxPuntingYards,GAME_ENTITY,INT,Game Box Punting Yards,event.boxPuntingYards
+boxPuntReturns,GAME_ENTITY,INT,Game Box Punt Returns,event.boxPuntReturns
+boxPuntReturnsTouchdowns,GAME_ENTITY,INT,Game Box Punt Returns Touchdowns,event.boxPuntReturnsTouchdowns
+boxPuntReturnsYards,GAME_ENTITY,INT,Game Box Punt Returns Yards,event.boxPuntReturnsYards
+boxRushingAttempts,GAME_ENTITY,INT,Game Box Rushing Attempts,event.boxRushingAttempts
+boxRushingFirstDowns,GAME_ENTITY,INT,Game Box Rushing First Downs,event.boxRushingFirstDowns
+boxRushingTouchdowns,GAME_ENTITY,INT,Game Box Rushing Touchdowns,event.boxRushingTouchdowns
+boxRushingYards,GAME_ENTITY,INT,Game Box Rushing Yards,event.boxRushingYards
+boxTouchdownsTotal,GAME_ENTITY,INT,Game Box Touchdowns Total,event.boxTouchdownsTotal
+openingCoinTossChoiceVerbose,GAME,ENUM,Opening Coin Toss Selection,event.openingCoinTossChoiceVerbose
+overtimeCoinTossChoiceVerbose,GAME,ENUM,Overtime Coin Toss Selection,event.overtimeCoinTossChoiceVerbose
+half,GAME_EVENT,INT,Half,event.half
+notContacted,GAME_EVENT_ENTITY,FLAG,Not Contacted Flag,event.notContacted
+contractTeam,TRANSACTION_ENTITY,FLAG,Dead Money Team,event.contractTeam
+contractPlayer,TRANSACTION_ENTITY,FLAG,Dead Money Player,event.contractPlayer
+contractSigningTeam,TRANSACTION_ENTITY,FLAG,Contract Signing Team,event.contractSigningTeam
+isRookieContract,TRANSACTION,FLAG,Is Rookie Contract,event.isRookieContract
+renegotiation,TRANSACTION,FLAG,Renegotiation,event.renegotiation
+gameId,GAME,INT,Id of the game,event.gameId
+possession,GAME_EVENT_ENTITY,FLAG,Has Possession at the Start of the Play,event.possession
+playSequence,GAME_EVENT,FLOAT,Id of the play,event.playSequence
+gameTeamFullName,GAME_ENTITY,STRING,Full Name at time of Game,event.gameTeamFullName
+gameTeamAbbrevName,GAME_ENTITY,STRING,Abbreviated Name at time of Game,event.gameTeamAbbrevName
+gameTeamToken,GAME_ENTITY,STRING,Token at time of Game,event.gameTeamToken
+gameTeamLocationName,GAME_ENTITY,STRING,Location Name at time of Game,event.gameTeamLocationName
+gameTeamName,GAME_ENTITY,STRING,Team Name at time of Game,event.gameTeamName
+possTeamNextPoints,GAME_EVENT,INT,The Next Number of Points Scored For or Against the Possession Team,event.possTeamNextPoints
+defSack1,GAME_EVENT_ENTITY,FLAG,Player 1 Involved in Sack,event.defSack1
+defSack2,GAME_EVENT_ENTITY,FLAG,Player 2 Involved in Sack,event.defSack2
+lastSeasonConferenceRank,GAME_ENTITY,INT,Last Season Conference Rank,event.lastSeasonConferenceRank
+lastSeasonDivisionRank,GAME_ENTITY,INT,Last Season Division Rank,event.lastSeasonDivisionRank
+lastSeasonLosses,GAME_ENTITY,INT,Last Season Losses,event.lastSeasonLosses
+lastSeasonPlayoffs,GAME_ENTITY,ENUM,Last Season Playoff Depth,event.lastSeasonPlayoffs
+lastSeasonTies,GAME_ENTITY,INT,Last Season Ties,event.lastSeasonTies
+lastSeasonWins,GAME_ENTITY,INT,Last Season Wins,event.lastSeasonWins
+inCoverage,GAME_EVENT_ENTITY,FLAG,Player In Coverage,event.inCoverage
+inPassBlock,GAME_EVENT_ENTITY,FLAG,Player Pass Blocked,event.inPassBlock
+inPassRush,GAME_EVENT_ENTITY,FLAG,Player Pass Rushed,event.inPassRush
+gameIsFirstYearWithTeam,GAME_ENTITY,FLAG,Is First Year with Team at Time of Game,event.gameIsFirstYearWithTeam
+gameIsRookieContract,GAME_ENTITY,FLAG,Is Rookie Contract at Time of Game,event.gameIsRookieContract
+qbStarterId,GAME_ENTITY,INT,QB Starter ID for Team,event.qbStarterId
+qbStarterName,GAME_ENTITY,STRING,QB Starter Name for Team,event.qbStarterName
+coachFirstName,GAME_ENTITY,STRING,Coach First Name,event.coachFirstName
+coachFullName,GAME_ENTITY,STRING,Coach Full Name,event.coachFullName
+coachId,GAME_ENTITY,INT,Coach ID,event.coachId
+coachLastName,GAME_ENTITY,STRING,Coach Last Name,event.coachLastName
+defDroppedInt,GAME_EVENT_ENTITY,FLAG,Player/Team Dropped Interception,event.defDroppedInt
+droppedInt,GAME_EVENT,FLAG,Dropped Interception on Play,event.droppedInt
+playEPA,GAME_EVENT,FLOAT,Expected Points Added for Possession Team on Play,event.playEPA
+game,GAME,FLAG,Is a Game,event.game
+inMajorConf,GAME_ENTITY,FLAG,In Major Conference,event.inMajorConf
+notInMajorConf,GAME_ENTITY,FLAG,Not In Major Conference,event.notInMajorConf
+otScore,GAME_ENTITY,INT,OT Score,event.otScore
+gameCoverage,GAME,ENUM,Game Data Coverage,event.gameCoverage
+gameSource,GAME,ENUM,Game Data Source,event.gameSource
+winLoss,GAME_ENTITY,ENUM,"Win, Loss, Tie",event.winLoss
+homeAway,GAME_ENTITY,ENUM,"Home, Away, Neutral",event.homeAway
+distToSuccess,GAME_EVENT,INT,Distance to Successful Play,event.distToSuccess
+playAirYardsFromSuccess,GAME_EVENT,INT,Air Yards Past Success Line,event.playAirYardsFromSuccess
+successfulPlay,GAME_EVENT,FLAG,Successful Play,event.successfulPlay
+stFormation,GAME_EVENT,ENUM,Special Teams Formation,event.stFormation
+firstPressure,GAME_EVENT_ENTITY,FLAG,First Player to create Pressure,event.firstPressure
+playNumInGame,GAME_EVENT,INT,Team Offensive Play Number In Game,event.playNumInGame
+playNumInHalf,GAME_EVENT,INT,Team Offensive Play Number In Half,event.playNumInHalf
+offAByeWeek,GAME_ENTITY,FLAG,Last Week a Bye,event.offAByeWeek
+daysOfRest,GAME_ENTITY,INT,Days of rest between games,event.daysOfRest
+previousGameResult,GAME_ENTITY,ENUM,Last Game WIN/LOSS/Tie,event.previousGameResult
+olCount,GAME_EVENT,INT,OL Count,event.olCount
+qbCount,GAME_EVENT,INT,QB Count,event.qbCount
+hasOddsData,GAME,FLAG,Has Odds Data,event.hasOddsData
+oddsHomePointSpread,GAME,FLOAT,Odds Home Point Spread,event.oddsHomePointSpread
+oddsOverUnderTotal,GAME,FLOAT,Odds Over Under Total,event.oddsOverUnderTotal
+coachGameNumSBEra,GAME_ENTITY,INT,Head Coach Game Num in SB ERA,event.coachGameNumSBEra
+oddsPointSpread,GAME_ENTITY,FLOAT,Odds Point Spread for Team,event.oddsPointSpread
+qbStartNumSBEra,GAME_ENTITY,INT,QB Start Num in SB ERA,event.qbStartNumSBEra
+oddsHomeCoverMargin,GAME,FLOAT,Odds Home Cover Margin,event.oddsHomeCoverMargin
+oddsOverMargin,GAME,FLOAT,Odds Over Under Over Margin,event.oddsOverMargin
+oddsTotalOver,GAME,FLAG,Odds Over Under Total Over,event.oddsTotalOver
+oddsCoverLoss,GAME_ENTITY,FLAG,Odds Cover Loss for Team,event.oddsCoverLoss
+oddsCoverMargin,GAME_ENTITY,FLOAT,Odds Cover Margin for Team,event.oddsCoverMargin
+oddsCoverWin,GAME_ENTITY,FLAG,Odds Cover Win for Team,event.oddsCoverWin
+oddsCoverPush,GAME_ENTITY,FLAG,Odds Cover Push for Team,event.oddsCoverPush
+oddsTotalPush,GAME,FLAG,Odds Over Under Total Push,event.oddsTotalPush
+oddsTotalUnder,GAME,FLAG,Odds Over Under Total Under,event.oddsTotalUnder
+nickName,ENTITY,STRING,Team Nick Name,event.nickName
+defensiveCoordinatorFirstName,GAME_ENTITY,STRING,Coordinator First Name,event.defensiveCoordinatorFirstName
+defensiveCoordinatorFullName,GAME_ENTITY,STRING,Coordinator Full Name,event.defensiveCoordinatorFullName
+defensiveCoordinatorId,GAME_ENTITY,STRING,Coordinator ID,event.defensiveCoordinatorId
+defensiveCoordinatorLastName,GAME_ENTITY,STRING,Coordinator Last Name,event.defensiveCoordinatorLastName
+gameTeamNickName,GAME_ENTITY,STRING,Team Nick Name at time of Game,event.gameTeamNickName
+offensiveCoordinatorFirstName,GAME_ENTITY,STRING,Coordinator First Name,event.offensiveCoordinatorFirstName
+offensiveCoordinatorFullName,GAME_ENTITY,STRING,Coordinator Full Name,event.offensiveCoordinatorFullName
+offensiveCoordinatorId,GAME_ENTITY,STRING,Coordinator ID,event.offensiveCoordinatorId
+offensiveCoordinatorLastName,GAME_ENTITY,STRING,Coordinator Last Name,event.offensiveCoordinatorLastName
+espnNGSPlayerMetricsR5ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics R5 Receiver Player Id,event.espnNGSPlayerMetricsR5ReceiverId
+espnNGSPlayerMetricsRouteR5Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R5 Class,event.espnNGSPlayerMetricsRouteR5Class
+espnNGSPlayerMetricsRouteR5DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route R5 Defender Player Id,event.espnNGSPlayerMetricsRouteR5DefenderId
+espnNGSPlayerMetricsRouteR5Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R5 Group,event.espnNGSPlayerMetricsRouteR5Group
+espnNGSPlayerMetricsRouteR5GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R5 Group Type Id,event.espnNGSPlayerMetricsRouteR5GroupTypeCode
+espnNGSPlayerMetricsRouteR5Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route R5 Jet,event.espnNGSPlayerMetricsRouteR5Jet
+espnNGSPlayerMetricsRouteR5MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route R5 Max Depth,event.espnNGSPlayerMetricsRouteR5MaxDepth
+ngsTimeToThrow,GAME_EVENT,INT,NULL,event.ngsTimeToThrow
+ngsTimeToTackle,GAME_EVENT,INT,NULL,event.ngsTimeToTackle
+ngsTimeInTackleBox,GAME_EVENT,INT,NULL,event.ngsTimeInTackleBox
+ngsTargetYardsGainedBeforeCloseInAfterCatch,GAME_EVENT,FLOAT,NULL,event.ngsTargetYardsGainedBeforeCloseInAfterCatch
+ngsTargetYardsAfterCatchOverExpected,GAME_EVENT,FLOAT,NULL,event.ngsTargetYardsAfterCatchOverExpected
+ngsTargetSpeedAtPassArrived,GAME_EVENT,FLOAT,NULL,event.ngsTargetSpeedAtPassArrived
+ngsTargetSideOfCenter,GAME_EVENT,ENUM,NULL,event.ngsTargetSideOfCenter
+ngsTargetSeparationClosedFromPassForwardToOutcome,GAME_EVENT,FLOAT,NULL,event.ngsTargetSeparationClosedFromPassForwardToOutcome
+ngsTargetSeparationAtPassForward,GAME_EVENT,FLOAT,NULL,event.ngsTargetSeparationAtPassForward
+ngsTargetSeparationAtPassArrived,GAME_EVENT,FLOAT,NULL,event.ngsTargetSeparationAtPassArrived
+ngsTargetSeparationAtOutcome,GAME_EVENT,FLOAT,NULL,event.ngsTargetSeparationAtOutcome
+ngsTargetRoute,GAME_EVENT,ENUM,NULL,event.ngsTargetRoute
+ngsTargetPlayPositionDetailedGroup,GAME_EVENT,ENUM,Target Play Position Detailed Group,event.ngsTargetPlayPositionDetailedGroup
+ngsTargetLocationType,GAME_EVENT,ENUM,NULL,event.ngsTargetLocationType
+ngsTargetLocationSticksMidOffsetAtThrowX,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationSticksMidOffsetAtThrowX
+ngsTargetLocationSticksMidOffsetAtPassOutcomeX,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationSticksMidOffsetAtPassOutcomeX
+ngsTargetLocationLOSMidOffsetAtThrowY,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationLOSMidOffsetAtThrowY
+ngsTargetLocationLOSMidOffsetAtPassOutcomeY,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationLOSMidOffsetAtPassOutcomeY
+ngsTargetLocationBallSnapOffsetAtThrowY,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationBallSnapOffsetAtThrowY
+ngsTargetLocationBallSnapOffsetAtThrowX,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationBallSnapOffsetAtThrowX
+ngsTargetLocationBallSnapOffsetAtPassOutcomeY,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationBallSnapOffsetAtPassOutcomeY
+ngsTargetLocationBallSnapOffsetAtPassOutcomeX,GAME_EVENT,FLOAT,NULL,event.ngsTargetLocationBallSnapOffsetAtPassOutcomeX
+ngsTargetIsolated,GAME_EVENT,FLAG,NULL,event.ngsTargetIsolated
+ngsTargetExpectedYardsAfterCatch,GAME_EVENT,FLOAT,NULL,event.ngsTargetExpectedYardsAfterCatch
+ngsTargetDistanceFromSideline,GAME_EVENT,FLOAT,NULL,event.ngsTargetDistanceFromSideline
+ngsTargetDistanceFromEndzone,GAME_EVENT,FLOAT,NULL,event.ngsTargetDistanceFromEndzone
+ngsTargetDefendersWithinTwoYardsAtPassArrived,GAME_EVENT,INT,NULL,event.ngsTargetDefendersWithinTwoYardsAtPassArrived
+ngsTargetCushion,GAME_EVENT,FLOAT,NULL,event.ngsTargetCushion
+ngsTargetComputedYardsAfterCatchRounded,GAME_EVENT,INT,NULL,event.ngsTargetComputedYardsAfterCatchRounded
+ngsTargetComputedYardsAfterCatch,GAME_EVENT,FLOAT,NULL,event.ngsTargetComputedYardsAfterCatch
+ngsSnapToTouchdownTime,GAME_EVENT,INT,NULL,event.ngsSnapToTouchdownTime
+ngsSnapToTackleTime,GAME_EVENT,INT,NULL,event.ngsSnapToTackleTime
+ngsSnapToSackTime,GAME_EVENT,INT,NULL,event.ngsSnapToSackTime
+ngsSnapToRunTime,GAME_EVENT,INT,NULL,event.ngsSnapToRunTime
+ngsSnapToPlayEndTime,GAME_EVENT,INT,NULL,event.ngsSnapToPlayEndTime
+ngsSnapToPassOutcomeTime,GAME_EVENT,INT,NULL,event.ngsSnapToPassOutcomeTime
+ngsSnapToPassForwardTime,GAME_EVENT,INT,NULL,event.ngsSnapToPassForwardTime
+ngsSnapToPassArrivedTime,GAME_EVENT,INT,NULL,event.ngsSnapToPassArrivedTime
+ngsSnapToOutOfBoundsTime,GAME_EVENT,INT,NULL,event.ngsSnapToOutOfBoundsTime
+ngsSnapToKickBlockTime,GAME_EVENT,INT,NULL,event.ngsSnapToKickBlockTime
+ngsSnapToHandoffTime,GAME_EVENT,INT,NULL,event.ngsSnapToHandoffTime
+ngsSnapToFirstContactTime,GAME_EVENT,INT,NULL,event.ngsSnapToFirstContactTime
+ngsSnapLocationLOSMidOffset,GAME_EVENT,FLOAT,NULL,event.ngsSnapLocationLOSMidOffset
+ngsSackerGetOffTime,GAME_EVENT,INT,NULL,event.ngsSackerGetOffTime
+ngsRushYardsOverExpected,GAME_EVENT,FLOAT,NULL,event.ngsRushYardsOverExpected
+ngsRushYardsGainedBeforeCloseIn,GAME_EVENT,FLOAT,NULL,event.ngsRushYardsGainedBeforeCloseIn
+ngsRushYardsGainedAfterCloseIn,GAME_EVENT,FLOAT,NULL,event.ngsRushYardsGainedAfterCloseIn
+ngsRushYardsBeforeContactRounded,GAME_EVENT,INT,NULL,event.ngsRushYardsBeforeContactRounded
+ngsRushYardsBeforeContact,GAME_EVENT,FLOAT,NULL,event.ngsRushYardsBeforeContact
+ngsRushYardsAfterContactRounded,GAME_EVENT,INT,NULL,event.ngsRushYardsAfterContactRounded
+ngsRushYardsAfterContact,GAME_EVENT,FLOAT,NULL,event.ngsRushYardsAfterContact
+ngsRushTimeToLOS,GAME_EVENT,INT,NULL,event.ngsRushTimeToLOS
+ngsRushSpeedAtLOS,GAME_EVENT,FLOAT,NULL,event.ngsRushSpeedAtLOS
+ngsRushPreSnapLocation,GAME_EVENT,ENUM,NULL,event.ngsRushPreSnapLocation
+ngsRushLocation,GAME_EVENT,ENUM,NULL,event.ngsRushLocation
+ngsRushExpectedYardsWidth,GAME_EVENT,FLOAT,NULL,event.ngsRushExpectedYardsWidth
+ngsRushExpectedYardsUpper,GAME_EVENT,FLOAT,NULL,event.ngsRushExpectedYardsUpper
+ngsRushExpectedYardsLower,GAME_EVENT,FLOAT,NULL,event.ngsRushExpectedYardsLower
+ngsRushExpectedYards,GAME_EVENT,FLOAT,NULL,event.ngsRushExpectedYards
+ngsRusherPlayPositionDetailedGroup,GAME_EVENT,ENUM,Rusher Play Position Detailed Group,event.ngsRusherPlayPositionDetailedGroup
+ngsRusherLocationBallSnapOffsetAtPastTackleBoxY,GAME_EVENT,FLOAT,NULL,event.ngsRusherLocationBallSnapOffsetAtPastTackleBoxY
+ngsRusherLocationBallSnapOffsetAtPastTackleBoxX,GAME_EVENT,FLOAT,NULL,event.ngsRusherLocationBallSnapOffsetAtPastTackleBoxX
+ngsRusherLocationBallSnapOffsetAtLOSY,GAME_EVENT,FLOAT,NULL,event.ngsRusherLocationBallSnapOffsetAtLOSY
+ngsRusherLocationBallSnapOffsetAtLOSX,GAME_EVENT,FLOAT,NULL,event.ngsRusherLocationBallSnapOffsetAtLOSX
+ngsRunStuff,GAME_EVENT,FLAG,NULL,event.ngsRunStuff
+ngsReceiverRouteRun,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsReceiverRouteRun
+ngsReceiverIsolated,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsReceiverIsolated
+ngsQBScrambleYards,GAME_EVENT,FLOAT,NULL,event.ngsQBScrambleYards
+ngsPlayTrackingData,GAME_EVENT,FLAG,NGS Play Tracking Data,event.ngsPlayTrackingData
+ngsPlayTeamPrePlayWinProbability,GAME_EVENT_ENTITY,FLOAT,Team Win Probability Pre Snap,event.ngsPlayTeamPrePlayWinProbability
+ngsPlayTeamPostPlayWinProbability,GAME_EVENT_ENTITY,FLOAT,Team Win Probability After the Play,event.ngsPlayTeamPostPlayWinProbability
+ngsPlayTeamPlayWinProbabilityAdded,GAME_EVENT_ENTITY,FLOAT,Team Win Probability Added on Play,event.ngsPlayTeamPlayWinProbabilityAdded
+ngsPlaySummaryData,GAME_EVENT,FLAG,NGS Play Summary Data,event.ngsPlaySummaryData
+ngsPlayPositionSlot,GAME_EVENT_ENTITY,FLAG,Play Position in Slot,event.ngsPlayPositionSlot
+ngsPlayPositionRight,GAME_EVENT_ENTITY,FLAG,Play Position on Right,event.ngsPlayPositionRight
+ngsPlayPositionLeft,GAME_EVENT_ENTITY,FLAG,Play Position on Left,event.ngsPlayPositionLeft
+ngsPlayOffensiveStatsYards,GAME_EVENT,INT,NGS Offensive Yards,event.ngsPlayOffensiveStatsYards
+ngsPlayOffensiveStatsTrackingPassProbability,GAME_EVENT,FLOAT,NGS Pass Probability with Tracking,event.ngsPlayOffensiveStatsTrackingPassProbability
+ngsPlayOffensiveStatsTotWeight,GAME_EVENT,FLOAT,NGS Total Offensive Player Weight,event.ngsPlayOffensiveStatsTotWeight
+ngsPlayOffensiveStatsTimeBetweenPreviousPlayToSnap,GAME_EVENT,INT,NGS Offensive Time Between Previous Play to Snap,event.ngsPlayOffensiveStatsTimeBetweenPreviousPlayToSnap
+ngsPlayOffensiveStatsTimeBetweenHuddleBreakAndSnap,GAME_EVENT,INT,NGS Offensive Time Between Huddle Break and Snap,event.ngsPlayOffensiveStatsTimeBetweenHuddleBreakAndSnap
+ngsPlayOffensiveStatsShotgun,GAME_EVENT,FLAG,NGS Offensive Formation is Shotgun,event.ngsPlayOffensiveStatsShotgun
+ngsPlayOffensiveStatsPlayAction,GAME_EVENT,FLAG,NGS Offensive Play Action Flag,event.ngsPlayOffensiveStatsPlayAction
+ngsPlayOffensiveStatsPistol,GAME_EVENT,FLAG,NGS Offensive Formation is Pistol,event.ngsPlayOffensiveStatsPistol
+ngsPlayOffensiveStatsNonTrackingPassProbability,GAME_EVENT,FLOAT,NGS Pass Probability without Tracking,event.ngsPlayOffensiveStatsNonTrackingPassProbability
+ngsPlayOffensiveStatsFormationWideCount,GAME_EVENT,INT,NGS Offensive Formation Wide Count,event.ngsPlayOffensiveStatsFormationWideCount
+ngsPlayOffensiveStatsFormationTrips,GAME_EVENT,FLAG,NGS Offensive Formation Trips,event.ngsPlayOffensiveStatsFormationTrips
+ngsPlayOffensiveStatsFormationTightRightCount,GAME_EVENT,INT,NGS Offensive Formation Tight Right Count,event.ngsPlayOffensiveStatsFormationTightRightCount
+ngsPlayOffensiveStatsFormationTightLeftCount,GAME_EVENT,INT,NGS Offensive Formation Tight Left Count,event.ngsPlayOffensiveStatsFormationTightLeftCount
+ngsPlayOffensiveStatsFormationRightCount,GAME_EVENT,INT,NGS Offensive Formation Right Count,event.ngsPlayOffensiveStatsFormationRightCount
+ngsPlayOffensiveStatsFormationQBUnderCenter,GAME_EVENT,FLAG,NGS Offensive Formation QB Under Center,event.ngsPlayOffensiveStatsFormationQBUnderCenter
+ngsPlayOffensiveStatsFormationQBOnField,GAME_EVENT,FLAG,NGS Offensive Formation QB on Field,event.ngsPlayOffensiveStatsFormationQBOnField
+ngsPlayOffensiveStatsFormationQBLinedUpAsQb,GAME_EVENT,FLAG,NGS Offensive Formation QB Lined up as QB,event.ngsPlayOffensiveStatsFormationQBLinedUpAsQb
+ngsPlayOffensiveStatsFormationPlayersOnLine,GAME_EVENT,INT,NGS Offensive Formation On Line Count,event.ngsPlayOffensiveStatsFormationPlayersOnLine
+ngsPlayOffensiveStatsFormationLeftCount,GAME_EVENT,INT,NGS Offensive Formation Left Count,event.ngsPlayOffensiveStatsFormationLeftCount
+ngsPlayOffensiveStatsFormationHasDetachedOline,GAME_EVENT,FLAG,NGS Offensive Formation Detached O-Line,event.ngsPlayOffensiveStatsFormationHasDetachedOline
+ngsPlayOffensiveStatsFormationDetachedRightCount,GAME_EVENT,INT,NGS Offensive Formation Detached Right Count,event.ngsPlayOffensiveStatsFormationDetachedRightCount
+ngsPlayOffensiveStatsFormationDetachedLeftCount,GAME_EVENT,INT,NGS Offensive Formation Detached Left Count,event.ngsPlayOffensiveStatsFormationDetachedLeftCount
+ngsPlayOffensiveStatsFormationBundledRight,GAME_EVENT,FLAG,NGS Offensive Formation Bundled Right,event.ngsPlayOffensiveStatsFormationBundledRight
+ngsPlayOffensiveStatsFormationBundledLeft,GAME_EVENT,FLAG,NGS Offensive Formation Bundled Left,event.ngsPlayOffensiveStatsFormationBundledLeft
+ngsPlayOffensiveStatsFormationBunchedRight,GAME_EVENT,FLAG,NGS Offensive Formation Bunched Right,event.ngsPlayOffensiveStatsFormationBunchedRight
+ngsPlayOffensiveStatsFormationBunchedLeft,GAME_EVENT,FLAG,NGS Offensive Formation Bunched Left,event.ngsPlayOffensiveStatsFormationBunchedLeft
+ngsPlayOffensiveStatsFormationBehindQbPlayerCount,GAME_EVENT,INT,NGS Offensive Formation Behind QB Count,event.ngsPlayOffensiveStatsFormationBehindQbPlayerCount
+ngsPlayOffensiveStatsFormationBackfieldPlayerCount,GAME_EVENT,INT,NGS Offensive Formation Backfield Count,event.ngsPlayOffensiveStatsFormationBackfieldPlayerCount
+ngsPlayOffensiveStatsFormationBackfieldAlignment,GAME_EVENT,ENUM,NGS Offensive Formation Backfield Alignment,event.ngsPlayOffensiveStatsFormationBackfieldAlignment
+ngsPlayOffensiveStatsFormation,GAME_EVENT,ENUM,NGS Offensive Formation,event.ngsPlayOffensiveStatsFormation
+ngsPlayOffensiveStatsAVGHeight,GAME_EVENT,FLOAT,NGS Average Offensive Player Height,event.ngsPlayOffensiveStatsAVGHeight
+ngsPlayOffensePrePlayWinProbability,GAME_EVENT,FLOAT,Offense Win Probability Pre Snap,event.ngsPlayOffensePrePlayWinProbability
+ngsPlayOffensePostPlayWinProbability,GAME_EVENT,FLOAT,Offense Win Probability After the Play,event.ngsPlayOffensePostPlayWinProbability
+ngsPlayOffensePlayWinProbabilityAdded,GAME_EVENT,FLOAT,Offense Win Probability Added on Play,event.ngsPlayOffensePlayWinProbabilityAdded
+ngsPlayOffenseExpectedPointsAdded,GAME_EVENT,FLOAT,Offense Expected Points Added on Play,event.ngsPlayOffenseExpectedPointsAdded
+ngsPlayOffenseExpectedPoints,GAME_EVENT,FLOAT,Offense Expected Points Pre Snap,event.ngsPlayOffenseExpectedPoints
+ngsPlayHasRunPassOptionEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasRunPassOptionEvent
+ngsPlayHasPassShovelEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasPassShovelEvent
+ngsPlayHasPassLateralEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasPassLateralEvent
+ngsPlayHasOutOfBoundsEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasOutOfBoundsEvent
+ngsPlayHasMuffedEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasMuffedEvent
+ngsPlayHasLateralEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasLateralEvent
+ngsPlayHasKneelEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasKneelEvent
+ngsPlayHasDropKickEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasDropKickEvent
+ngsPlayHasDirectSnapEvent,GAME_EVENT,FLAG,NULL,event.ngsPlayHasDirectSnapEvent
+ngsPlayerTargetSideOfCenterNumber,GAME_EVENT,INT,NGS Target Receiver Number,event.ngsPlayerTargetSideOfCenterNumber
+ngsPlayerTargetReceiverNumber,GAME_EVENT,INT,NGS Target Receiver Number,event.ngsPlayerTargetReceiverNumber
+ngsPlayerReceiverRight5Route,GAME_EVENT,ENUM,NGS Player Right Side Receiver 5 (Outside to Inside) Route,event.ngsPlayerReceiverRight5Route
+ngsPlayerReceiverRight5Position,GAME_EVENT,ENUM,NGS Player Right Side Receiver 5 (Outside to Inside) Position,event.ngsPlayerReceiverRight5Position
+ngsPlayerReceiverRight5Id,GAME_EVENT,INT,NGS Player Right Side Receiver 5 (Outside to Inside) ID,event.ngsPlayerReceiverRight5Id
+ngsPlayerReceiverRight5,GAME_EVENT_ENTITY,FLAG,NGS Player Right Side Receiver 5 (Outside to Inside) Flag,event.ngsPlayerReceiverRight5
+ngsPlayerReceiverRight4Route,GAME_EVENT,ENUM,NGS Player Right Side Receiver 4 (Outside to Inside) Route,event.ngsPlayerReceiverRight4Route
+ngsPlayerReceiverRight4Position,GAME_EVENT,ENUM,NGS Player Right Side Receiver 4 (Outside to Inside) Position,event.ngsPlayerReceiverRight4Position
+ngsPlayerReceiverRight4Id,GAME_EVENT,INT,NGS Player Right Side Receiver 4 (Outside to Inside) ID,event.ngsPlayerReceiverRight4Id
+ngsPlayerReceiverRight4,GAME_EVENT_ENTITY,FLAG,NGS Player Right Side Receiver 4 (Outside to Inside) Flag,event.ngsPlayerReceiverRight4
+ngsPlayerReceiverRight3Route,GAME_EVENT,ENUM,NGS Player Right Side Receiver 3 (Outside to Inside) Route,event.ngsPlayerReceiverRight3Route
+ngsPlayerReceiverRight3Position,GAME_EVENT,ENUM,NGS Player Right Side Receiver 3 (Outside to Inside) Position,event.ngsPlayerReceiverRight3Position
+ngsPlayerReceiverRight3Id,GAME_EVENT,INT,NGS Player Right Side Receiver 3 (Outside to Inside) ID,event.ngsPlayerReceiverRight3Id
+ngsPlayerReceiverRight3,GAME_EVENT_ENTITY,FLAG,NGS Player Right Side Receiver 3 (Outside to Inside) Flag,event.ngsPlayerReceiverRight3
+ngsPlayerReceiverRight2Route,GAME_EVENT,ENUM,NGS Player Right Side Receiver 2 (Outside to Inside) Route,event.ngsPlayerReceiverRight2Route
+ngsPlayerReceiverRight2Position,GAME_EVENT,ENUM,NGS Player Right Side Receiver2 (Outside to Inside) Position,event.ngsPlayerReceiverRight2Position
+ngsPlayerReceiverRight2Id,GAME_EVENT,INT,NGS Player Right Side Receiver 2(Outside to Inside) ID,event.ngsPlayerReceiverRight2Id
+ngsPlayerReceiverRight2,GAME_EVENT_ENTITY,FLAG,NGS Player Right Side Receiver 2 (Outside to Inside) Flag,event.ngsPlayerReceiverRight2
+ngsPlayerReceiverRight1Route,GAME_EVENT,ENUM,NGS Player Right Side Receiver 1 (Outside to Inside) Route,event.ngsPlayerReceiverRight1Route
+ngsPlayerReceiverRight1Position,GAME_EVENT,ENUM,NGS Player Right Side Receiver 1 (Outside to Inside) Position,event.ngsPlayerReceiverRight1Position
+ngsPlayerReceiverRight1Id,GAME_EVENT,INT,NGS Player Right Side Receiver 1 (Outside to Inside) ID,event.ngsPlayerReceiverRight1Id
+ngsPlayerReceiverRight1,GAME_EVENT_ENTITY,FLAG,NGS Player Right Side Receiver 1 (Outside to Inside) Flag,event.ngsPlayerReceiverRight1
+ngsPlayerReceiverLeft5Route,GAME_EVENT,ENUM,NGS Player Left Side Receiver 5 (Outside to Inside) Route,event.ngsPlayerReceiverLeft5Route
+ngsPlayerReceiverLeft5Position,GAME_EVENT,ENUM,NGS Player Left Side Receiver 5 (Outside to Inside) Position,event.ngsPlayerReceiverLeft5Position
+ngsPlayerReceiverLeft5Id,GAME_EVENT,INT,NGS Player Left Side Receiver 5 (Outside to Inside) ID,event.ngsPlayerReceiverLeft5Id
+ngsPlayerReceiverLeft5,GAME_EVENT_ENTITY,FLAG,NGS Player Left Side Receiver 5 (Outside to Inside) Flag,event.ngsPlayerReceiverLeft5
+ngsPlayerReceiverLeft4Route,GAME_EVENT,ENUM,NGS Player Left Side Receiver 4 (Outside to Inside) Route,event.ngsPlayerReceiverLeft4Route
+ngsPlayerReceiverLeft4Position,GAME_EVENT,ENUM,NGS Player Left Side Receiver 4 (Outside to Inside) Position,event.ngsPlayerReceiverLeft4Position
+ngsPlayerReceiverLeft4Id,GAME_EVENT,INT,NGS Player Left Side Receiver 4 (Outside to Inside) ID,event.ngsPlayerReceiverLeft4Id
+ngsPlayerReceiverLeft4,GAME_EVENT_ENTITY,FLAG,NGS Player Left Side Receiver 4 (Outside to Inside) Flag,event.ngsPlayerReceiverLeft4
+ngsPlayerReceiverLeft3Route,GAME_EVENT,ENUM,NGS Player Left Side Receiver 3 (Outside to Inside) Route,event.ngsPlayerReceiverLeft3Route
+ngsPlayerReceiverLeft3Position,GAME_EVENT,ENUM,NGS Player Left Side Receiver 3 (Outside to Inside) Position,event.ngsPlayerReceiverLeft3Position
+ngsPlayerReceiverLeft3Id,GAME_EVENT,INT,NGS Player Left Side Receiver 3 (Outside to Inside) ID,event.ngsPlayerReceiverLeft3Id
+ngsPlayerReceiverLeft3,GAME_EVENT_ENTITY,FLAG,NGS Player Left Side Receiver 3 (Outside to Inside) Flag,event.ngsPlayerReceiverLeft3
+ngsPlayerReceiverLeft2Route,GAME_EVENT,ENUM,NGS Player Left Side Receiver 2 (Outside to Inside) Route,event.ngsPlayerReceiverLeft2Route
+ngsPlayerReceiverLeft2Position,GAME_EVENT,ENUM,NGS Player Left Side Receiver2 (Outside to Inside) Position,event.ngsPlayerReceiverLeft2Position
+ngsPlayerReceiverLeft2Id,GAME_EVENT,INT,NGS Player Left Side Receiver 2(Outside to Inside) ID,event.ngsPlayerReceiverLeft2Id
+ngsPlayerReceiverLeft2,GAME_EVENT_ENTITY,FLAG,NGS Player Left Side Receiver 2 (Outside to Inside) Flag,event.ngsPlayerReceiverLeft2
+ngsPlayerReceiverLeft1Route,GAME_EVENT,ENUM,NGS Player Left Side Receiver 1 (Outside to Inside) Route,event.ngsPlayerReceiverLeft1Route
+ngsPlayerReceiverLeft1Position,GAME_EVENT,ENUM,NGS Player Left Side Receiver 1 (Outside to Inside) Position,event.ngsPlayerReceiverLeft1Position
+ngsPlayerReceiverLeft1Id,GAME_EVENT,INT,NGS Player Left Side Receiver 1 (Outside to Inside) ID,event.ngsPlayerReceiverLeft1Id
+ngsPlayerReceiverLeft1,GAME_EVENT_ENTITY,FLAG,NGS Player Left Side Receiver 1 (Outside to Inside) Flag,event.ngsPlayerReceiverLeft1
+ngsPlayerReceiver5Id,GAME_EVENT,INT,NGS Player Receiver 5 (left to right) ID,event.ngsPlayerReceiver5Id
+ngsPlayerReceiver5,GAME_EVENT_ENTITY,FLAG,NGS Player Receiver 5 (left to right) Flag,event.ngsPlayerReceiver5
+ngsPlayerReceiver4Id,GAME_EVENT,INT,NGS Player Receiver 4 (left to right) ID,event.ngsPlayerReceiver4Id
+ngsPlayerReceiver4,GAME_EVENT_ENTITY,FLAG,NGS Player Receiver 4 (left to right) Flag,event.ngsPlayerReceiver4
+ngsPlayerReceiver3Id,GAME_EVENT,INT,NGS Player Receiver 3 (left to right) ID,event.ngsPlayerReceiver3Id
+ngsPlayerReceiver3,GAME_EVENT_ENTITY,FLAG,NGS Player Receiver 3 (left to right) Flag,event.ngsPlayerReceiver3
+ngsPlayerReceiver2Id,GAME_EVENT,INT,NGS Player Receiver 2 (left to right) ID,event.ngsPlayerReceiver2Id
+ngsPlayerReceiver2,GAME_EVENT_ENTITY,FLAG,NGS Player Receiver 2 (left to right) Flag,event.ngsPlayerReceiver2
+ngsPlayerReceiver1Id,GAME_EVENT,INT,NGS Player Receiver 1 (left to right) ID,event.ngsPlayerReceiver1Id
+ngsPlayerReceiver1,GAME_EVENT_ENTITY,FLAG,NGS Player Receiver 1 (left to right) Flag,event.ngsPlayerReceiver1
+ngsPlayerQBId,GAME_EVENT,INT,NGS Player QB ID,event.ngsPlayerQBId
+ngsPlayerQB,GAME_EVENT_ENTITY,FLAG,NGS Player QB Flag,event.ngsPlayerQB
+ngsPlayerOL5Id,GAME_EVENT,INT,NGS Player OL 5 (left to right) ID,event.ngsPlayerOL5Id
+ngsPlayerOL5,GAME_EVENT_ENTITY,FLAG,NGS Player OL 5 (left to right) Flag,event.ngsPlayerOL5
+ngsPlayerOL4Id,GAME_EVENT,INT,NGS Player OL 4 (left to right) ID,event.ngsPlayerOL4Id
+ngsPlayerOL4,GAME_EVENT_ENTITY,FLAG,NGS Player OL 4 (left to right) Flag,event.ngsPlayerOL4
+ngsPlayerOL3Id,GAME_EVENT,INT,NGS Player OL 3 (left to right) ID,event.ngsPlayerOL3Id
+ngsPlayerOL3,GAME_EVENT_ENTITY,FLAG,NGS Player OL 3 (left to right) Flag,event.ngsPlayerOL3
+ngsPlayerOL2Id,GAME_EVENT,INT,NGS Player OL 2 (left to right) ID,event.ngsPlayerOL2Id
+ngsPlayerOL2,GAME_EVENT_ENTITY,FLAG,NGS Player OL 2 (left to right) Flag,event.ngsPlayerOL2
+ngsPlayerOL1Id,GAME_EVENT,INT,NGS Player OL 1 (left to right) ID,event.ngsPlayerOL1Id
+ngsPlayerOL1,GAME_EVENT_ENTITY,FLAG,NGS Player OL 1 (left to right) Flag,event.ngsPlayerOL1
+ngsPlayerLinedUpAsQB,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsPlayerLinedUpAsQB
+ngsPlayerEligibleReceiver,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsPlayerEligibleReceiver
+ngsPlayDirection,GAME_EVENT,ENUM,Play Direction (RIGHT|LEFT),event.ngsPlayDirection
+ngsPlayDiagramURL,GAME_EVENT,STRING_NO_INDEX,NGS Play Diagram URL,event.ngsPlayDiagramURL
+ngsPlayDefensiveStatsNumberOfPassRushers,GAME_EVENT,INT,NGS Defensive Pass Rushers,event.ngsPlayDefensiveStatsNumberOfPassRushers
+ngsPlayDefensiveStatsNumberOfHighSafeties,GAME_EVENT,INT,NGS Defensive High Safeties,event.ngsPlayDefensiveStatsNumberOfHighSafeties
+ngsPlayDefensiveStatsDefendersInTheBox,GAME_EVENT,INT,NGS Defensive Defenders In Box,event.ngsPlayDefensiveStatsDefendersInTheBox
+ngsPlayDefensiveStatsAVGSeparationToQb,GAME_EVENT,FLOAT,NGS Defensive Avg Separation to QB,event.ngsPlayDefensiveStatsAVGSeparationToQb
+ngsPlayActualYardsToGoDiff,GAME_EVENT,FLOAT,Play Actual Yards to Go Minus Official Yards to Go,event.ngsPlayActualYardsToGoDiff
+ngsPlayActualYardsToGo,GAME_EVENT,FLOAT,Play Actual Yards to Go,event.ngsPlayActualYardsToGo
+ngsPerformanceHideData,GAME_EVENT_ENTITY,FLAG,Hide Player Performance Data for this Play,event.ngsPerformanceHideData
+ngsPassTimeInAir,GAME_EVENT,INT,NULL,event.ngsPassTimeInAir
+ngsPassRouteGroupWHEELCount,GAME_EVENT,INT,NGS Route Count for WHEEL,event.ngsPassRouteGroupWHEELCount
+ngsPassRouteGroupSLANTCount,GAME_EVENT,INT,NGS Route Count for SLANT,event.ngsPassRouteGroupSLANTCount
+ngsPassRouteGroupSCREENCount,GAME_EVENT,INT,NGS Route Count for SCREEN,event.ngsPassRouteGroupSCREENCount
+ngsPassRouteGroupPOSTCount,GAME_EVENT,INT,NGS Route Count for POST,event.ngsPassRouteGroupPOSTCount
+ngsPassRouteGroupOUTCount,GAME_EVENT,INT,NGS Route Count for OUT,event.ngsPassRouteGroupOUTCount
+ngsPassRouteGroupINCount,GAME_EVENT,INT,NGS Route Count for IN,event.ngsPassRouteGroupINCount
+ngsPassRouteGroupHITCHCount,GAME_EVENT,INT,NGS Route Count for HITCH,event.ngsPassRouteGroupHITCHCount
+ngsPassRouteGroupGOCount,GAME_EVENT,INT,NGS Route Count for GO,event.ngsPassRouteGroupGOCount
+ngsPassRouteGroupFLATCount,GAME_EVENT,INT,NGS Route Count for FLAT,event.ngsPassRouteGroupFLATCount
+ngsPassRouteGroupCROSSCount,GAME_EVENT,INT,NGS Route Count for CROSS,event.ngsPassRouteGroupCROSSCount
+ngsPassRouteGroupCORNERCount,GAME_EVENT,INT,NGS Route Count for CORNER,event.ngsPassRouteGroupCORNERCount
+ngsPassRouteGroupANGLECount,GAME_EVENT,INT,NGS Route Count for ANGLE,event.ngsPassRouteGroupANGLECount
+ngsPassRouteCount,GAME_EVENT,INT,NULL,event.ngsPassRouteCount
+ngsPassPasserSpeedAtPassForward,GAME_EVENT,FLOAT,NULL,event.ngsPassPasserSpeedAtPassForward
+ngsPassMinSeparationFromPassRusher,GAME_EVENT,FLOAT,NULL,event.ngsPassMinSeparationFromPassRusher
+ngsPassMaxSpeed,GAME_EVENT,FLOAT,NULL,event.ngsPassMaxSpeed
+ngsPassLocationType,GAME_EVENT,ENUM,NULL,event.ngsPassLocationType
+ngsPassLateralDistance,GAME_EVENT,FLOAT,NULL,event.ngsPassLateralDistance
+ngsPassHasPassTippedEvent,GAME_EVENT,FLAG,NULL,event.ngsPassHasPassTippedEvent
+ngsPassHasDroppedPassEvent,GAME_EVENT,FLAG,NULL,event.ngsPassHasDroppedPassEvent
+ngsPassFirstContactBeforePassOutcome,GAME_EVENT,FLAG,NULL,event.ngsPassFirstContactBeforePassOutcome
+ngsPasserLocationSticksMidOffsetAtPassOutcomeX,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationSticksMidOffsetAtPassOutcomeX
+ngsPasserLocationLOSMidOffsetAtThrowY,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationLOSMidOffsetAtThrowY
+ngsPasserLocationLOSMidOffsetAtPassOutcomeY,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationLOSMidOffsetAtPassOutcomeY
+ngsPasserLocationBallSnapOffsetAtThrowY,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationBallSnapOffsetAtThrowY
+ngsPasserLocationBallSnapOffsetAtThrowX,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationBallSnapOffsetAtThrowX
+ngsPasserLocationBallSnapOffsetAtPassOutcomeY,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationBallSnapOffsetAtPassOutcomeY
+ngsPasserLocationBallSnapOffsetAtPassOutcomeX,GAME_EVENT,FLOAT,NULL,event.ngsPasserLocationBallSnapOffsetAtPassOutcomeX
+ngsPassDropped,GAME_EVENT,FLAG,NULL,event.ngsPassDropped
+ngsPassDropBackType,GAME_EVENT,ENUM,NULL,event.ngsPassDropBackType
+ngsPassDropBackDistance,GAME_EVENT,FLOAT,NULL,event.ngsPassDropBackDistance
+ngsPassDefended,GAME_EVENT,FLAG,NGS Pass Defended,event.ngsPassDefended
+ngsPassCompletionProbability,GAME_EVENT,FLOAT,NULL,event.ngsPassCompletionProbability
+ngsPassBlockersCount,GAME_EVENT,INT,NULL,event.ngsPassBlockersCount
+ngsPassAvgSpeed,GAME_EVENT,FLOAT,NULL,event.ngsPassAvgSpeed
+ngsPassArrivedToFirstContactTime,GAME_EVENT,INT,NULL,event.ngsPassArrivedToFirstContactTime
+ngsParticipationWRCount,GAME_EVENT,INT,NGS Participation WR Count,event.ngsParticipationWRCount
+ngsParticipationTECount,GAME_EVENT,INT,NGS Participation TE Count,event.ngsParticipationTECount
+ngsParticipationSpecialSnap,GAME_EVENT_ENTITY,FLAG,NGS Participation Player Special Teams Snap,event.ngsParticipationSpecialSnap
+ngsParticipationSnap,GAME_EVENT_ENTITY,FLAG,NGS Participation Player Snap,event.ngsParticipationSnap
+ngsParticipationRBCount,GAME_EVENT,INT,NGS Participation RB Count,event.ngsParticipationRBCount
+ngsParticipationQBCount,GAME_EVENT,INT,NGS Participation QB Count,event.ngsParticipationQBCount
+ngsParticipationOLCount,GAME_EVENT,INT,NGS Participation OL Count,event.ngsParticipationOLCount
+ngsParticipationOffenseSnap,GAME_EVENT_ENTITY,FLAG,NGS Participation Player Offensive Snap,event.ngsParticipationOffenseSnap
+ngsParticipationLBCount,GAME_EVENT,INT,NGS Participation LB Count,event.ngsParticipationLBCount
+ngsParticipationHBCount,GAME_EVENT,INT,NGS Participation HB Count,event.ngsParticipationHBCount
+ngsParticipationFBCount,GAME_EVENT,INT,NGS Participation FB Count,event.ngsParticipationFBCount
+ngsParticipationDLCount,GAME_EVENT,INT,NGS Participation DL Count,event.ngsParticipationDLCount
+ngsParticipationDefenseSnap,GAME_EVENT_ENTITY,FLAG,NGS Participation Player Defensive Snap,event.ngsParticipationDefenseSnap
+ngsParticipationDBCount,GAME_EVENT,INT,NGS Participation DB Count,event.ngsParticipationDBCount
+ngsOffenseTouchdownProbability,GAME_EVENT,FLOAT,NULL,event.ngsOffenseTouchdownProbability
+ngsOffenseSuccessProbability,GAME_EVENT,FLOAT,NULL,event.ngsOffenseSuccessProbability
+ngsOffenseFirstDownProbability,GAME_EVENT,FLOAT,NULL,event.ngsOffenseFirstDownProbability
+ngsNearestDefenderToQBWasBlitzing,GAME_EVENT,FLAG,NULL,event.ngsNearestDefenderToQBWasBlitzing
+ngsNearestDefenderToQBSideOfCenter,GAME_EVENT,ENUM,NULL,event.ngsNearestDefenderToQBSideOfCenter
+ngsNearestDefenderToQBSeparationToQB,GAME_EVENT,FLOAT,NULL,event.ngsNearestDefenderToQBSeparationToQB
+ngsNearestDefenderToQBPositionGroup,GAME_EVENT,ENUM,NULL,event.ngsNearestDefenderToQBPositionGroup
+ngsNearestDefenderToQBLinedUpInBox,GAME_EVENT,FLAG,NULL,event.ngsNearestDefenderToQBLinedUpInBox
+ngsNearestDefenderToQBDefenderLocationType,GAME_EVENT,ENUM,NULL,event.ngsNearestDefenderToQBDefenderLocationType
+ngsNearestDefenderToQB,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsNearestDefenderToQB
+ngsLineSetToSnapTime,GAME_EVENT,INT,NULL,event.ngsLineSetToSnapTime
+ngsInPassRush,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsInPassRush
+ngsInPassBlock,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsInPassBlock
+ngsInCoverage,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsInCoverage
+ngsFirstContactToTackleTime,GAME_EVENT,INT,NULL,event.ngsFirstContactToTackleTime
+ngsDefenderWasBlitzing,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsDefenderWasBlitzing
+ngsDefenderRunStuff,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsDefenderRunStuff
+ngsDefenderPressureCausedTurnover,GAME_EVENT,FLAG,NULL,event.ngsDefenderPressureCausedTurnover
+ngsDefenderPressure,GAME_EVENT,FLAG,NULL,event.ngsDefenderPressure
+ngsDefenderPassDefended,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsDefenderPassDefended
+ngsDefenderLinedUpInTheBox,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsDefenderLinedUpInTheBox
+ngsDefenderLinedUpInBoxCount,GAME_EVENT,INT,NULL,event.ngsDefenderLinedUpInBoxCount
+ngsDefenderDBBlitzCount,GAME_EVENT,INT,NULL,event.ngsDefenderDBBlitzCount
+ngsDefenderCausedPressure,GAME_EVENT_ENTITY,FLAG,NULL,event.ngsDefenderCausedPressure
+ngsDefenderBlitzCount,GAME_EVENT,INT,NULL,event.ngsDefenderBlitzCount
+ngsBallLocationAbsAtSnapY,GAME_EVENT,FLOAT,NULL,event.ngsBallLocationAbsAtSnapY
+ngsBallLocationAbsAtSnapX,GAME_EVENT,FLOAT,NULL,event.ngsBallLocationAbsAtSnapX
+ngsBallCarrierLocationSticksMidOffsetAtPlayEndX,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationSticksMidOffsetAtPlayEndX
+ngsBallCarrierLocationSticksMidOffsetAtFirstContactX,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationSticksMidOffsetAtFirstContactX
+ngsBallCarrierLocationLOSMidOffsetAtPlayEndY,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationLOSMidOffsetAtPlayEndY
+ngsBallCarrierLocationLOSMidOffsetAtFirstContactY,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationLOSMidOffsetAtFirstContactY
+ngsBallCarrierLocationBallSnapOffsetAtPlayEndY,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationBallSnapOffsetAtPlayEndY
+ngsBallCarrierLocationBallSnapOffsetAtPlayEndX,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationBallSnapOffsetAtPlayEndX
+ngsBallCarrierLocationBallSnapOffsetAtFirstContactY,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationBallSnapOffsetAtFirstContactY
+ngsBallCarrierLocationBallSnapOffsetAtFirstContactX,GAME_EVENT,FLOAT,NULL,event.ngsBallCarrierLocationBallSnapOffsetAtFirstContactX
+ngsAirYardsToSticks,GAME_EVENT,FLOAT,NULL,event.ngsAirYardsToSticks
+ngsAirYardsRounded,GAME_EVENT,INT,NULL,event.ngsAirYardsRounded
+ngsAirYards,GAME_EVENT,FLOAT,NULL,event.ngsAirYards
+ngsAirDistance,GAME_EVENT,FLOAT,NULL,event.ngsAirDistance
+espnNGSPlayerMetricsTargetRouteTypeId,GAME_EVENT,INT,Target Route Type Id,event.espnNGSPlayerMetricsTargetRouteTypeId
+espnNGSPlayerMetricsTargetRouteSide,GAME_EVENT,ENUM,ESPN NGS Player Metrics Target Route Side,event.espnNGSPlayerMetricsTargetRouteSide
+espnNGSPlayerMetricsTargetRouteRecNumber,GAME_EVENT,INT,ESPN NGS Player Metrics Target Route Rec Number,event.espnNGSPlayerMetricsTargetRouteRecNumber
+espnNGSPlayerMetricsTargetRouteRank,GAME_EVENT,INT,ESPN NGS Player Metrics Target Route Rank,event.espnNGSPlayerMetricsTargetRouteRank
+espnNGSPlayerMetricsTargetRouteMaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Target Route Max Depth,event.espnNGSPlayerMetricsTargetRouteMaxDepth
+espnNGSPlayerMetricsTargetRouteJet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Target Route Jet,event.espnNGSPlayerMetricsTargetRouteJet
+espnNGSPlayerMetricsTargetRouteGroupTypeCode,GAME_EVENT,ENUM,Target Route Group Type Code,event.espnNGSPlayerMetricsTargetRouteGroupTypeCode
+espnNGSPlayerMetricsTargetRouteGroup,GAME_EVENT,ENUM,ESPN NGS Player Metrics Target Route Group,event.espnNGSPlayerMetricsTargetRouteGroup
+espnNGSPlayerMetricsTargetRouteDefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Target Route Defender Player Id,event.espnNGSPlayerMetricsTargetRouteDefenderId
+espnNGSPlayerMetricsTargetRouteDefender,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Target Route Defender Flag,event.espnNGSPlayerMetricsTargetRouteDefender
+espnNGSPlayerMetricsTargetRouteClass,GAME_EVENT,ENUM,ESPN NGS Player Metrics Target Route Class,event.espnNGSPlayerMetricsTargetRouteClass
+espnNGSPlayerMetricsRunStopWinCountByIL,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Win Count by Interior Line for Play,event.espnNGSPlayerMetricsRunStopWinCountByIL
+espnNGSPlayerMetricsRunStopWinCountByED,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Win Count by Edge Defenders for Play,event.espnNGSPlayerMetricsRunStopWinCountByED
+espnNGSPlayerMetricsRunStopWinCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Win Count for Play,event.espnNGSPlayerMetricsRunStopWinCount
+espnNGSPlayerMetricsRunStopWin,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Win Flag,event.espnNGSPlayerMetricsRunStopWin
+espnNGSPlayerMetricsRunStopUnblockedWinCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Unblocked Win Count for Play,event.espnNGSPlayerMetricsRunStopUnblockedWinCount
+espnNGSPlayerMetricsRunStopTackleWinCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Tackle Win Count for Play,event.espnNGSPlayerMetricsRunStopTackleWinCount
+espnNGSPlayerMetricsRunStopTackleWin,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Tackle Win Flag,event.espnNGSPlayerMetricsRunStopTackleWin
+espnNGSPlayerMetricsRunStopPrimaryBlocker,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Primary Blocker,event.espnNGSPlayerMetricsRunStopPrimaryBlocker
+espnNGSPlayerMetricsRunStopForceCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Force Count for Play,event.espnNGSPlayerMetricsRunStopForceCount
+espnNGSPlayerMetricsRunStopForce,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Force Flag,event.espnNGSPlayerMetricsRunStopForce
+espnNGSPlayerMetricsRunStopDoubleTeamCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Double Team Count for Play,event.espnNGSPlayerMetricsRunStopDoubleTeamCount
+espnNGSPlayerMetricsRunStopDoubleTeam,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Double Team Flag,event.espnNGSPlayerMetricsRunStopDoubleTeam
+espnNGSPlayerMetricsRunStopDisruptionCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Disruption Count for Play,event.espnNGSPlayerMetricsRunStopDisruptionCount
+espnNGSPlayerMetricsRunStopDisruption,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Disruption Flag,event.espnNGSPlayerMetricsRunStopDisruption
+espnNGSPlayerMetricsRunStopCountByIL,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Count by Interior Line for Play,event.espnNGSPlayerMetricsRunStopCountByIL
+espnNGSPlayerMetricsRunStopCountByED,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Count by Edge Defenders for Play,event.espnNGSPlayerMetricsRunStopCountByED
+espnNGSPlayerMetricsRunStopCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Count for Play,event.espnNGSPlayerMetricsRunStopCount
+espnNGSPlayerMetricsRunStopBlockWinCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Stop Block Win Count for Play,event.espnNGSPlayerMetricsRunStopBlockWinCount
+espnNGSPlayerMetricsRunStopBlockWin,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Block Win Flag,event.espnNGSPlayerMetricsRunStopBlockWin
+espnNGSPlayerMetricsRunStop,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Stop Flag,event.espnNGSPlayerMetricsRunStop
+espnNGSPlayerMetricsRunBlockWinCountByT,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Win Count by Tackles for Play,event.espnNGSPlayerMetricsRunBlockWinCountByT
+espnNGSPlayerMetricsRunBlockWinCountByG,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Win Count by Guards for Play,event.espnNGSPlayerMetricsRunBlockWinCountByG
+espnNGSPlayerMetricsRunBlockWinCountByC,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Win Count by Center for Play,event.espnNGSPlayerMetricsRunBlockWinCountByC
+espnNGSPlayerMetricsRunBlockWinCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Win Count for Play,event.espnNGSPlayerMetricsRunBlockWinCount
+espnNGSPlayerMetricsRunBlockWin,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Win Flag,event.espnNGSPlayerMetricsRunBlockWin
+espnNGSPlayerMetricsRunBlockWhiffLossCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Whiff Loss Count for Play,event.espnNGSPlayerMetricsRunBlockWhiffLossCount
+espnNGSPlayerMetricsRunBlockWhiffLoss,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Whiff Loss Flag,event.espnNGSPlayerMetricsRunBlockWhiffLoss
+espnNGSPlayerMetricsRunBlockTklLossCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Tkl Loss Count for Play,event.espnNGSPlayerMetricsRunBlockTklLossCount
+espnNGSPlayerMetricsRunBlockTklLoss,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Tkl LossFlag,event.espnNGSPlayerMetricsRunBlockTklLoss
+espnNGSPlayerMetricsRunBlockPrimaryTarget,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Primary Target,event.espnNGSPlayerMetricsRunBlockPrimaryTarget
+espnNGSPlayerMetricsRunBlockLossCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Loss Count for Play,event.espnNGSPlayerMetricsRunBlockLossCount
+espnNGSPlayerMetricsRunBlockLoss,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Loss Flag,event.espnNGSPlayerMetricsRunBlockLoss
+espnNGSPlayerMetricsRunBlockForceCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Force Count for Play,event.espnNGSPlayerMetricsRunBlockForceCount
+espnNGSPlayerMetricsRunBlockForce,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Force Flag,event.espnNGSPlayerMetricsRunBlockForce
+espnNGSPlayerMetricsRunBlockDoubleTeamCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Double Team Count for Play,event.espnNGSPlayerMetricsRunBlockDoubleTeamCount
+espnNGSPlayerMetricsRunBlockDoubleTeam,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Double Team Flag,event.espnNGSPlayerMetricsRunBlockDoubleTeam
+espnNGSPlayerMetricsRunBlockDisruptionCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Disruption Count for Play,event.espnNGSPlayerMetricsRunBlockDisruptionCount
+espnNGSPlayerMetricsRunBlockDisruption,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Disruption Flag,event.espnNGSPlayerMetricsRunBlockDisruption
+espnNGSPlayerMetricsRunBlockCountByT,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Count by Tackles for Play,event.espnNGSPlayerMetricsRunBlockCountByT
+espnNGSPlayerMetricsRunBlockCountByG,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Count by Guards for Play,event.espnNGSPlayerMetricsRunBlockCountByG
+espnNGSPlayerMetricsRunBlockCountByC,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Count by Center for Play,event.espnNGSPlayerMetricsRunBlockCountByC
+espnNGSPlayerMetricsRunBlockCount,GAME_EVENT,INT,ESPN NGS Player Metrics Run Block Count for Play,event.espnNGSPlayerMetricsRunBlockCount
+espnNGSPlayerMetricsRunBlock,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Run Block Flag,event.espnNGSPlayerMetricsRunBlock
+espnNGSPlayerMetricsRouteRun,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Route Run,event.espnNGSPlayerMetricsRouteRun
+espnNGSPlayerMetricsRouteR4MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route R4 Max Depth,event.espnNGSPlayerMetricsRouteR4MaxDepth
+espnNGSPlayerMetricsRouteR4Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route R4 Jet,event.espnNGSPlayerMetricsRouteR4Jet
+espnNGSPlayerMetricsRouteR4GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R4 Group Type Id,event.espnNGSPlayerMetricsRouteR4GroupTypeCode
+espnNGSPlayerMetricsRouteR4Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R4 Group,event.espnNGSPlayerMetricsRouteR4Group
+espnNGSPlayerMetricsRouteR4DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route R4 Defender Player Id,event.espnNGSPlayerMetricsRouteR4DefenderId
+espnNGSPlayerMetricsRouteR4Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R4 Class,event.espnNGSPlayerMetricsRouteR4Class
+espnNGSPlayerMetricsRouteR3MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route R3 Max Depth,event.espnNGSPlayerMetricsRouteR3MaxDepth
+espnNGSPlayerMetricsRouteR3Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route R3 Jet,event.espnNGSPlayerMetricsRouteR3Jet
+espnNGSPlayerMetricsRouteR3GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R3 Group Type Id,event.espnNGSPlayerMetricsRouteR3GroupTypeCode
+espnNGSPlayerMetricsRouteR3Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R3 Group,event.espnNGSPlayerMetricsRouteR3Group
+espnNGSPlayerMetricsRouteR3DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route R3 Defender Player Id,event.espnNGSPlayerMetricsRouteR3DefenderId
+espnNGSPlayerMetricsRouteR3Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R3 Class,event.espnNGSPlayerMetricsRouteR3Class
+espnNGSPlayerMetricsRouteR2MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route R2 Max Depth,event.espnNGSPlayerMetricsRouteR2MaxDepth
+espnNGSPlayerMetricsRouteR2Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route R2 Jet,event.espnNGSPlayerMetricsRouteR2Jet
+espnNGSPlayerMetricsRouteR2GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R2 Group Type Id,event.espnNGSPlayerMetricsRouteR2GroupTypeCode
+espnNGSPlayerMetricsRouteR2Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R2 Group,event.espnNGSPlayerMetricsRouteR2Group
+espnNGSPlayerMetricsRouteR2DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route R2 Defender Player Id,event.espnNGSPlayerMetricsRouteR2DefenderId
+espnNGSPlayerMetricsRouteR2Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R2 Class,event.espnNGSPlayerMetricsRouteR2Class
+espnNGSPlayerMetricsRouteR1MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route R1 Max Depth,event.espnNGSPlayerMetricsRouteR1MaxDepth
+espnNGSPlayerMetricsRouteR1Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route R1 Jet,event.espnNGSPlayerMetricsRouteR1Jet
+espnNGSPlayerMetricsRouteR1GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R1 Group Type Id,event.espnNGSPlayerMetricsRouteR1GroupTypeCode
+espnNGSPlayerMetricsRouteR1Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R1 Group,event.espnNGSPlayerMetricsRouteR1Group
+espnNGSPlayerMetricsRouteR1DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route R1 Defender Player Id,event.espnNGSPlayerMetricsRouteR1DefenderId
+espnNGSPlayerMetricsRouteR1Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route R1 Class,event.espnNGSPlayerMetricsRouteR1Class
+espnNGSPlayerMetricsRoutePassStrength,GAME_EVENT,ENUM,ESPN NGS Player Metrics Play Route Pass Strength,event.espnNGSPlayerMetricsRoutePassStrength
+espnNGSPlayerMetricsRouteOnRightCount,GAME_EVENT,INT,ESPN NGS Player Metrics Receiver Routes on Right Count,event.espnNGSPlayerMetricsRouteOnRightCount
+espnNGSPlayerMetricsRouteOnLeftCount,GAME_EVENT,INT,ESPN NGS Player Metrics Receiver Routes on Left Count,event.espnNGSPlayerMetricsRouteOnLeftCount
+espnNGSPlayerMetricsRouteL4MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route L4 Max Depth,event.espnNGSPlayerMetricsRouteL4MaxDepth
+espnNGSPlayerMetricsRouteL4Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route L4 Jet,event.espnNGSPlayerMetricsRouteL4Jet
+espnNGSPlayerMetricsRouteL4GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L4 Group Type Id,event.espnNGSPlayerMetricsRouteL4GroupTypeCode
+espnNGSPlayerMetricsRouteL4Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L4 Group,event.espnNGSPlayerMetricsRouteL4Group
+espnNGSPlayerMetricsRouteL4DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route L4 Defender Player Id,event.espnNGSPlayerMetricsRouteL4DefenderId
+espnNGSPlayerMetricsRouteL4Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L4 Class,event.espnNGSPlayerMetricsRouteL4Class
+espnNGSPlayerMetricsRouteL3MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route L3 Max Depth,event.espnNGSPlayerMetricsRouteL3MaxDepth
+espnNGSPlayerMetricsRouteL3Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route L3 Jet,event.espnNGSPlayerMetricsRouteL3Jet
+espnNGSPlayerMetricsRouteL3GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L3 Group Type Id,event.espnNGSPlayerMetricsRouteL3GroupTypeCode
+espnNGSPlayerMetricsRouteL3Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L3 Group,event.espnNGSPlayerMetricsRouteL3Group
+espnNGSPlayerMetricsRouteL3DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route L3 Defender Player Id,event.espnNGSPlayerMetricsRouteL3DefenderId
+espnNGSPlayerMetricsRouteL3Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L3 Class,event.espnNGSPlayerMetricsRouteL3Class
+espnNGSPlayerMetricsRouteL2MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route L2 Max Depth,event.espnNGSPlayerMetricsRouteL2MaxDepth
+espnNGSPlayerMetricsRouteL2Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route L2 Jet,event.espnNGSPlayerMetricsRouteL2Jet
+espnNGSPlayerMetricsRouteL2GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L2 Group Type Id,event.espnNGSPlayerMetricsRouteL2GroupTypeCode
+espnNGSPlayerMetricsRouteL2Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L2 Group,event.espnNGSPlayerMetricsRouteL2Group
+espnNGSPlayerMetricsRouteL2DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route L2 Defender Player Id,event.espnNGSPlayerMetricsRouteL2DefenderId
+espnNGSPlayerMetricsRouteL2Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L2 Class,event.espnNGSPlayerMetricsRouteL2Class
+espnNGSPlayerMetricsRouteL1MaxDepth,GAME_EVENT,FLOAT,ESPN NGS Player Metrics Route L1 Max Depth,event.espnNGSPlayerMetricsRouteL1MaxDepth
+espnNGSPlayerMetricsRouteL1Jet,GAME_EVENT,FLAG,ESPN NGS Player Metrics Route L1 Jet,event.espnNGSPlayerMetricsRouteL1Jet
+espnNGSPlayerMetricsRouteL1GroupTypeCode,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L1 Group Type Id,event.espnNGSPlayerMetricsRouteL1GroupTypeCode
+espnNGSPlayerMetricsRouteL1Group,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L1 Group,event.espnNGSPlayerMetricsRouteL1Group
+espnNGSPlayerMetricsRouteL1DefenderId,GAME_EVENT,INT,ESPN NGS Player Metrics Route L1 Defender Player Id,event.espnNGSPlayerMetricsRouteL1DefenderId
+espnNGSPlayerMetricsRouteL1Class,GAME_EVENT,ENUM,ESPN NGS Player Metrics Route L1 Class,event.espnNGSPlayerMetricsRouteL1Class
+espnNGSPlayerMetricsRouteJet,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Route Jet,event.espnNGSPlayerMetricsRouteJet
+espnNGSPlayerMetricsRouteGroupWheelCount,GAME_EVENT,INT,Play count of route group: Wheel,event.espnNGSPlayerMetricsRouteGroupWheelCount
+espnNGSPlayerMetricsRouteGroupVerticalCount,GAME_EVENT,INT,Play count of route group: Vertical,event.espnNGSPlayerMetricsRouteGroupVerticalCount
+espnNGSPlayerMetricsRouteGroupScreenCount,GAME_EVENT,INT,Play count of route group: Screen,event.espnNGSPlayerMetricsRouteGroupScreenCount
+espnNGSPlayerMetricsRouteGroupPivotCount,GAME_EVENT,INT,Play count of route group: Pivot,event.espnNGSPlayerMetricsRouteGroupPivotCount
+espnNGSPlayerMetricsRouteGroupOutsideShortCount,GAME_EVENT,INT,Play count of route group: Outside-short,event.espnNGSPlayerMetricsRouteGroupOutsideShortCount
+espnNGSPlayerMetricsRouteGroupOutsideDeepCount,GAME_EVENT,INT,Play count of route group: Outside-deep,event.espnNGSPlayerMetricsRouteGroupOutsideDeepCount
+espnNGSPlayerMetricsRouteGroupNaCount,GAME_EVENT,INT,Play count of route group: NA,event.espnNGSPlayerMetricsRouteGroupNaCount
+espnNGSPlayerMetricsRouteGroupInsideShortCount,GAME_EVENT,INT,Play count of route group: Inside-short,event.espnNGSPlayerMetricsRouteGroupInsideShortCount
+espnNGSPlayerMetricsRouteGroupInsideDeepCount,GAME_EVENT,INT,Play count of route group: Inside-deep,event.espnNGSPlayerMetricsRouteGroupInsideDeepCount
+espnNGSPlayerMetricsRouteGroupHookCount,GAME_EVENT,INT,Play count of route group: Hook,event.espnNGSPlayerMetricsRouteGroupHookCount
+espnNGSPlayerMetricsRouteGroupDoubleCount,GAME_EVENT,INT,Play count of route group: Double,event.espnNGSPlayerMetricsRouteGroupDoubleCount
+espnNGSPlayerMetricsRouteGroupCrossingCount,GAME_EVENT,INT,Play count of route group: Crossing,event.espnNGSPlayerMetricsRouteGroupCrossingCount
+espnNGSPlayerMetricsRouteDefendedJet,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Route Defended Jet,event.espnNGSPlayerMetricsRouteDefendedJet
+espnNGSPlayerMetricsRouteDefended,GAME_EVENT_ENTITY,FLAG,ESPN NGS Player Metrics Route Defended,event.espnNGSPlayerMetricsRouteDefended
+espnNGSPlayerMetricsRouteCount,GAME_EVENT,INT,ESPN NGS Player Metrics Receiver Route Count,event.espnNGSPlayerMetricsRouteCount
+espnNGSPlayerMetricsRouteClassWhipCount,GAME_EVENT,INT,Play count of route class: Whip,event.espnNGSPlayerMetricsRouteClassWhipCount
+espnNGSPlayerMetricsRouteClassWheelCount,GAME_EVENT,INT,Play count of route class: Wheel,event.espnNGSPlayerMetricsRouteClassWheelCount
+espnNGSPlayerMetricsRouteClassSwingCount,GAME_EVENT,INT,Play count of route class: Swing,event.espnNGSPlayerMetricsRouteClassSwingCount
+espnNGSPlayerMetricsRouteClassSpeedOutCount,GAME_EVENT,INT,Play count of route class: Speed Out,event.espnNGSPlayerMetricsRouteClassSpeedOutCount
+espnNGSPlayerMetricsRouteClassSmashCount,GAME_EVENT,INT,Play count of route class: Smash,event.espnNGSPlayerMetricsRouteClassSmashCount
+espnNGSPlayerMetricsRouteClassSluggoCount,GAME_EVENT,INT,Play count of route class: Sluggo,event.espnNGSPlayerMetricsRouteClassSluggoCount
+espnNGSPlayerMetricsRouteClassSliceCount,GAME_EVENT,INT,Play count of route class: Slice,event.espnNGSPlayerMetricsRouteClassSliceCount
+espnNGSPlayerMetricsRouteClassSlantCount,GAME_EVENT,INT,Play count of route class: Slant,event.espnNGSPlayerMetricsRouteClassSlantCount
+espnNGSPlayerMetricsRouteClassSitCount,GAME_EVENT,INT,Play count of route class: Sit,event.espnNGSPlayerMetricsRouteClassSitCount
+espnNGSPlayerMetricsRouteClassShortOutCount,GAME_EVENT,INT,Play count of route class: Short Out,event.espnNGSPlayerMetricsRouteClassShortOutCount
+espnNGSPlayerMetricsRouteClassSeamCount,GAME_EVENT,INT,Play count of route class: Seam,event.espnNGSPlayerMetricsRouteClassSeamCount
+espnNGSPlayerMetricsRouteClassScreenCount,GAME_EVENT,INT,Play count of route class: Screen,event.espnNGSPlayerMetricsRouteClassScreenCount
+espnNGSPlayerMetricsRouteClassRbCheckCount,GAME_EVENT,INT,Play count of route class: RB Check,event.espnNGSPlayerMetricsRouteClassRbCheckCount
+espnNGSPlayerMetricsRouteClassPostCount,GAME_EVENT,INT,Play count of route class: Post,event.espnNGSPlayerMetricsRouteClassPostCount
+espnNGSPlayerMetricsRouteClassPostCornerCount,GAME_EVENT,INT,Play count of route class: Post Corner,event.espnNGSPlayerMetricsRouteClassPostCornerCount
+espnNGSPlayerMetricsRouteClassOutUpCount,GAME_EVENT,INT,Play count of route class: Out & Up,event.espnNGSPlayerMetricsRouteClassOutUpCount
+espnNGSPlayerMetricsRouteClassNaCount,GAME_EVENT,INT,Play count of route class: NA,event.espnNGSPlayerMetricsRouteClassNaCount
+espnNGSPlayerMetricsRouteClassLeakCount,GAME_EVENT,INT,Play count of route class: Leak,event.espnNGSPlayerMetricsRouteClassLeakCount
+espnNGSPlayerMetricsRouteClassInCount,GAME_EVENT,INT,Play count of route class: In,event.espnNGSPlayerMetricsRouteClassInCount
+espnNGSPlayerMetricsRouteClassHitchCount,GAME_EVENT,INT,Play count of route class: Hitch,event.espnNGSPlayerMetricsRouteClassHitchCount
+espnNGSPlayerMetricsRouteClassGoCount,GAME_EVENT,INT,Play count of route class: Go,event.espnNGSPlayerMetricsRouteClassGoCount
+espnNGSPlayerMetricsRouteClassFlatCount,GAME_EVENT,INT,Play count of route class: Flat,event.espnNGSPlayerMetricsRouteClassFlatCount
+espnNGSPlayerMetricsRouteClassFadeShortCount,GAME_EVENT,INT,Play count of route class: Fade-short,event.espnNGSPlayerMetricsRouteClassFadeShortCount
+espnNGSPlayerMetricsRouteClassFadeDeepCount,GAME_EVENT,INT,Play count of route class: Fade-deep,event.espnNGSPlayerMetricsRouteClassFadeDeepCount
+espnNGSPlayerMetricsRouteClassDragCount,GAME_EVENT,INT,Play count of route class: Drag,event.espnNGSPlayerMetricsRouteClassDragCount
+espnNGSPlayerMetricsRouteClassDigCount,GAME_EVENT,INT,Play count of route class: Dig,event.espnNGSPlayerMetricsRouteClassDigCount
+espnNGSPlayerMetricsRouteClassDeepOutCount,GAME_EVENT,INT,Play count of route class: Deep Out,event.espnNGSPlayerMetricsRouteClassDeepOutCount
+espnNGSPlayerMetricsRouteClassCurlCount,GAME_EVENT,INT,Play count of route class: Curl,event.espnNGSPlayerMetricsRouteClassCurlCount
+espnNGSPlayerMetricsRouteClassCrossMediumCount,GAME_EVENT,INT,Play count of route class: Cross-medium,event.espnNGSPlayerMetricsRouteClassCrossMediumCount
+espnNGSPlayerMetricsRouteClassCrossDeepCount,GAME_EVENT,INT,Play count of route class: Cross-deep,event.espnNGSPlayerMetricsRouteClassCrossDeepCount
+espnNGSPlayerMetricsRouteClassCornerPostCount,GAME_EVENT,INT,Play count of route class: Corner Post,event.espnNGSPlayerMetricsRouteClassCornerPostCount
+espnNGSPlayerMetricsRouteClassCornerCount,GAME_EVENT,INT,Play count of route class: Corner,event.espnNGSPlayerMetricsRouteClassCornerCount
+espnNGSPlayerMetricsRouteClassComebackCount,GAME_EVENT,INT,Play count of route class: Comeback,event.espnNGSPlayerMetricsRouteClassComebackCount
+espnNGSPlayerMetricsRouteClassAngleCount,GAME_EVENT,INT,Play count of route class: Angle,event.espnNGSPlayerMetricsRouteClassAngleCount
+espnNGSPlayerMetricsR4ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics R4 Receiver Player Id,event.espnNGSPlayerMetricsR4ReceiverId
+espnNGSPlayerMetricsR3ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics R3 Receiver Player Id,event.espnNGSPlayerMetricsR3ReceiverId
+espnNGSPlayerMetricsR2ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics R2 Receiver Player Id,event.espnNGSPlayerMetricsR2ReceiverId
+espnNGSPlayerMetricsR1ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics R1 Receiver Player Id,event.espnNGSPlayerMetricsR1ReceiverId
+espnNGSPlayerMetricsL4ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics L4 Receiver Player Id,event.espnNGSPlayerMetricsL4ReceiverId
+espnNGSPlayerMetricsL3ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics L3 Receiver Player Id,event.espnNGSPlayerMetricsL3ReceiverId
+espnNGSPlayerMetricsL2ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics L2 Receiver Player Id,event.espnNGSPlayerMetricsL2ReceiverId
+espnNGSPlayerMetricsL1ReceiverId,GAME_EVENT,INT,ESPN NGS Player Metrics L1 Receiver Player Id,event.espnNGSPlayerMetricsL1ReceiverId
+espnNGSPlayerMetricsJetRouteCount,GAME_EVENT,INT,ESPN NGS Player Metrics Receiver Jet Routes Count,event.espnNGSPlayerMetricsJetRouteCount
+espnNGSPassRushWinsOnPlay,GAME_EVENT,INT,espnNGSPassRushWinsOnPlay,event.espnNGSPassRushWinsOnPlay
+espnNGSPassRushUnblockedRushersOnPlay,GAME_EVENT,INT,espnNGSPassRushUnblockedRushersOnPlay,event.espnNGSPassRushUnblockedRushersOnPlay
+espnNGSPassRushSecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRushSecondaryBlock,event.espnNGSPassRushSecondaryBlock
+espnNGSPassRushPrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRushPrimaryBlock,event.espnNGSPassRushPrimaryBlock
+espnNGSPassRushPlayTime,GAME_EVENT,INT,espnNGSPassRushPlayTime,event.espnNGSPassRushPlayTime
+espnNGSPassRushPlay,GAME_EVENT,FLAG,espnNGSPassRushPlay,event.espnNGSPassRushPlay
+espnNGSPassRushPartOfBlockingDoubleTeam,GAME_EVENT_ENTITY,FLAG,espnNGSPassRushPartOfBlockingDoubleTeam,event.espnNGSPassRushPartOfBlockingDoubleTeam
+espnNGSPassRushLossesOnPlay,GAME_EVENT,INT,espnNGSPassRushLossesOnPlay,event.espnNGSPassRushLossesOnPlay
+espnNGSPassRushFirstTimeToPressureRusherCount,GAME_EVENT,INT,espnNGSPassRushFirstTimeToPressureRusherCount,event.espnNGSPassRushFirstTimeToPressureRusherCount
+espnNGSPassRushFirstTimeToPressure,GAME_EVENT,INT,espnNGSPassRushFirstTimeToPressure,event.espnNGSPassRushFirstTimeToPressure
+espnNGSPassRushFirstPressureVsDoubleTeam,GAME_EVENT,FLAG,espnNGSPassRushFirstPressureVsDoubleTeam,event.espnNGSPassRushFirstPressureVsDoubleTeam
+espnNGSPassRushFirstPressureUnblocked,GAME_EVENT,FLAG,espnNGSPassRushFirstPressureUnblocked,event.espnNGSPassRushFirstPressureUnblocked
+espnNGSPassRusherUnblocked,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusherUnblocked,event.espnNGSPassRusherUnblocked
+espnNGSPassRusherFirstPressure,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusherFirstPressure,event.espnNGSPassRusherFirstPressure
+espnNGSPassRusherDoubleTeamed,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusherDoubleTeamed,event.espnNGSPassRusherDoubleTeamed
+espnNGSPassRusher9TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher9TimeToPressure,event.espnNGSPassRusher9TimeToPressure
+espnNGSPassRusher9PressureDuration,GAME_EVENT,INT,espnNGSPassRusher9PressureDuration,event.espnNGSPassRusher9PressureDuration
+espnNGSPassRusher9DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher9DoubleTeamed,event.espnNGSPassRusher9DoubleTeamed
+espnNGSPassRusher9DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher9DoubleTeamDuration,event.espnNGSPassRusher9DoubleTeamDuration
+espnNGSPassRusher9,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher9,event.espnNGSPassRusher9
+espnNGSPassRusher8TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher8TimeToPressure,event.espnNGSPassRusher8TimeToPressure
+espnNGSPassRusher8PressureDuration,GAME_EVENT,INT,espnNGSPassRusher8PressureDuration,event.espnNGSPassRusher8PressureDuration
+espnNGSPassRusher8DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher8DoubleTeamed,event.espnNGSPassRusher8DoubleTeamed
+espnNGSPassRusher8DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher8DoubleTeamDuration,event.espnNGSPassRusher8DoubleTeamDuration
+espnNGSPassRusher8,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher8,event.espnNGSPassRusher8
+espnNGSPassRusher7TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher7TimeToPressure,event.espnNGSPassRusher7TimeToPressure
+espnNGSPassRusher7PressureDuration,GAME_EVENT,INT,espnNGSPassRusher7PressureDuration,event.espnNGSPassRusher7PressureDuration
+espnNGSPassRusher7DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher7DoubleTeamed,event.espnNGSPassRusher7DoubleTeamed
+espnNGSPassRusher7DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher7DoubleTeamDuration,event.espnNGSPassRusher7DoubleTeamDuration
+espnNGSPassRusher7,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher7,event.espnNGSPassRusher7
+espnNGSPassRusher6TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher6TimeToPressure,event.espnNGSPassRusher6TimeToPressure
+espnNGSPassRusher6PressureDuration,GAME_EVENT,INT,espnNGSPassRusher6PressureDuration,event.espnNGSPassRusher6PressureDuration
+espnNGSPassRusher6DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher6DoubleTeamed,event.espnNGSPassRusher6DoubleTeamed
+espnNGSPassRusher6DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher6DoubleTeamDuration,event.espnNGSPassRusher6DoubleTeamDuration
+espnNGSPassRusher6,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher6,event.espnNGSPassRusher6
+espnNGSPassRusher5TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher5TimeToPressure,event.espnNGSPassRusher5TimeToPressure
+espnNGSPassRusher5PressureDuration,GAME_EVENT,INT,espnNGSPassRusher5PressureDuration,event.espnNGSPassRusher5PressureDuration
+espnNGSPassRusher5DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher5DoubleTeamed,event.espnNGSPassRusher5DoubleTeamed
+espnNGSPassRusher5DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher5DoubleTeamDuration,event.espnNGSPassRusher5DoubleTeamDuration
+espnNGSPassRusher5,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher5,event.espnNGSPassRusher5
+espnNGSPassRusher4TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher4TimeToPressure,event.espnNGSPassRusher4TimeToPressure
+espnNGSPassRusher4PressureDuration,GAME_EVENT,INT,espnNGSPassRusher4PressureDuration,event.espnNGSPassRusher4PressureDuration
+espnNGSPassRusher4DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher4DoubleTeamed,event.espnNGSPassRusher4DoubleTeamed
+espnNGSPassRusher4DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher4DoubleTeamDuration,event.espnNGSPassRusher4DoubleTeamDuration
+espnNGSPassRusher4,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher4,event.espnNGSPassRusher4
+espnNGSPassRusher3TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher3TimeToPressure,event.espnNGSPassRusher3TimeToPressure
+espnNGSPassRusher3PressureDuration,GAME_EVENT,INT,espnNGSPassRusher3PressureDuration,event.espnNGSPassRusher3PressureDuration
+espnNGSPassRusher3DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher3DoubleTeamed,event.espnNGSPassRusher3DoubleTeamed
+espnNGSPassRusher3DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher3DoubleTeamDuration,event.espnNGSPassRusher3DoubleTeamDuration
+espnNGSPassRusher3,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher3,event.espnNGSPassRusher3
+espnNGSPassRusher2TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher2TimeToPressure,event.espnNGSPassRusher2TimeToPressure
+espnNGSPassRusher2PressureDuration,GAME_EVENT,INT,espnNGSPassRusher2PressureDuration,event.espnNGSPassRusher2PressureDuration
+espnNGSPassRusher2DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher2DoubleTeamed,event.espnNGSPassRusher2DoubleTeamed
+espnNGSPassRusher2DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher2DoubleTeamDuration,event.espnNGSPassRusher2DoubleTeamDuration
+espnNGSPassRusher2,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher2,event.espnNGSPassRusher2
+espnNGSPassRusher1TimeToPressure,GAME_EVENT,INT,espnNGSPassRusher1TimeToPressure,event.espnNGSPassRusher1TimeToPressure
+espnNGSPassRusher1PressureDuration,GAME_EVENT,INT,espnNGSPassRusher1PressureDuration,event.espnNGSPassRusher1PressureDuration
+espnNGSPassRusher1DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher1DoubleTeamed,event.espnNGSPassRusher1DoubleTeamed
+espnNGSPassRusher1DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher1DoubleTeamDuration,event.espnNGSPassRusher1DoubleTeamDuration
+espnNGSPassRusher10DoubleTeamed,GAME_EVENT,FLAG,espnNGSPassRusher10DoubleTeamed,event.espnNGSPassRusher10DoubleTeamed
+espnNGSPassRusher10DoubleTeamDuration,GAME_EVENT,INT,espnNGSPassRusher10DoubleTeamDuration,event.espnNGSPassRusher10DoubleTeamDuration
+espnNGSPassRusher10,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher10,event.espnNGSPassRusher10
+espnNGSPassRusher1,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher1,event.espnNGSPassRusher1
+espnNGSPassRusher,GAME_EVENT_ENTITY,FLAG,espnNGSPassRusher,event.espnNGSPassRusher
+espnNGSPassRushBlockFirstPressure,GAME_EVENT_ENTITY,FLAG,espnNGSPassRushBlockFirstPressure,event.espnNGSPassRushBlockFirstPressure
+espnNGSPassRushBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRushBlock,event.espnNGSPassRushBlock
+espnNGSPassRush9Unblocked,GAME_EVENT,FLAG,espnNGSPassRush9Unblocked,event.espnNGSPassRush9Unblocked
+espnNGSPassRush9SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush9SecondaryBlockerId,event.espnNGSPassRush9SecondaryBlockerId
+espnNGSPassRush9SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush9SecondaryBlock,event.espnNGSPassRush9SecondaryBlock
+espnNGSPassRush9PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush9PrimaryBlockerId,event.espnNGSPassRush9PrimaryBlockerId
+espnNGSPassRush9PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush9PrimaryBlock,event.espnNGSPassRush9PrimaryBlock
+espnNGSPassRush9FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush9FirstPressure,event.espnNGSPassRush9FirstPressure
+espnNGSPassRush8Unblocked,GAME_EVENT,FLAG,espnNGSPassRush8Unblocked,event.espnNGSPassRush8Unblocked
+espnNGSPassRush8SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush8SecondaryBlockerId,event.espnNGSPassRush8SecondaryBlockerId
+espnNGSPassRush8SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush8SecondaryBlock,event.espnNGSPassRush8SecondaryBlock
+espnNGSPassRush8PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush8PrimaryBlockerId,event.espnNGSPassRush8PrimaryBlockerId
+espnNGSPassRush8PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush8PrimaryBlock,event.espnNGSPassRush8PrimaryBlock
+espnNGSPassRush8FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush8FirstPressure,event.espnNGSPassRush8FirstPressure
+espnNGSPassRush7Unblocked,GAME_EVENT,FLAG,espnNGSPassRush7Unblocked,event.espnNGSPassRush7Unblocked
+espnNGSPassRush7SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush7SecondaryBlockerId,event.espnNGSPassRush7SecondaryBlockerId
+espnNGSPassRush7SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush7SecondaryBlock,event.espnNGSPassRush7SecondaryBlock
+espnNGSPassRush7PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush7PrimaryBlockerId,event.espnNGSPassRush7PrimaryBlockerId
+espnNGSPassRush7PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush7PrimaryBlock,event.espnNGSPassRush7PrimaryBlock
+espnNGSPassRush7FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush7FirstPressure,event.espnNGSPassRush7FirstPressure
+espnNGSPassRush6Unblocked,GAME_EVENT,FLAG,espnNGSPassRush6Unblocked,event.espnNGSPassRush6Unblocked
+espnNGSPassRush6SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush6SecondaryBlockerId,event.espnNGSPassRush6SecondaryBlockerId
+espnNGSPassRush6SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush6SecondaryBlock,event.espnNGSPassRush6SecondaryBlock
+espnNGSPassRush6PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush6PrimaryBlockerId,event.espnNGSPassRush6PrimaryBlockerId
+espnNGSPassRush6PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush6PrimaryBlock,event.espnNGSPassRush6PrimaryBlock
+espnNGSPassRush6FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush6FirstPressure,event.espnNGSPassRush6FirstPressure
+espnNGSPassRush5Unblocked,GAME_EVENT,FLAG,espnNGSPassRush5Unblocked,event.espnNGSPassRush5Unblocked
+espnNGSPassRush5SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush5SecondaryBlockerId,event.espnNGSPassRush5SecondaryBlockerId
+espnNGSPassRush5SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush5SecondaryBlock,event.espnNGSPassRush5SecondaryBlock
+espnNGSPassRush5PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush5PrimaryBlockerId,event.espnNGSPassRush5PrimaryBlockerId
+espnNGSPassRush5PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush5PrimaryBlock,event.espnNGSPassRush5PrimaryBlock
+espnNGSPassRush5FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush5FirstPressure,event.espnNGSPassRush5FirstPressure
+espnNGSPassRush4Unblocked,GAME_EVENT,FLAG,espnNGSPassRush4Unblocked,event.espnNGSPassRush4Unblocked
+espnNGSPassRush4SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush4SecondaryBlockerId,event.espnNGSPassRush4SecondaryBlockerId
+espnNGSPassRush4SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush4SecondaryBlock,event.espnNGSPassRush4SecondaryBlock
+espnNGSPassRush4PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush4PrimaryBlockerId,event.espnNGSPassRush4PrimaryBlockerId
+espnNGSPassRush4PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush4PrimaryBlock,event.espnNGSPassRush4PrimaryBlock
+espnNGSPassRush4FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush4FirstPressure,event.espnNGSPassRush4FirstPressure
+espnNGSPassRush3Unblocked,GAME_EVENT,FLAG,espnNGSPassRush3Unblocked,event.espnNGSPassRush3Unblocked
+espnNGSPassRush3SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush3SecondaryBlockerId,event.espnNGSPassRush3SecondaryBlockerId
+espnNGSPassRush3SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush3SecondaryBlock,event.espnNGSPassRush3SecondaryBlock
+espnNGSPassRush3PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush3PrimaryBlockerId,event.espnNGSPassRush3PrimaryBlockerId
+espnNGSPassRush3PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush3PrimaryBlock,event.espnNGSPassRush3PrimaryBlock
+espnNGSPassRush3FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush3FirstPressure,event.espnNGSPassRush3FirstPressure
+espnNGSPassRush2Unblocked,GAME_EVENT,FLAG,espnNGSPassRush2Unblocked,event.espnNGSPassRush2Unblocked
+espnNGSPassRush2SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush2SecondaryBlockerId,event.espnNGSPassRush2SecondaryBlockerId
+espnNGSPassRush2SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush2SecondaryBlock,event.espnNGSPassRush2SecondaryBlock
+espnNGSPassRush2PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush2PrimaryBlockerId,event.espnNGSPassRush2PrimaryBlockerId
+espnNGSPassRush2PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush2PrimaryBlock,event.espnNGSPassRush2PrimaryBlock
+espnNGSPassRush2FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush2FirstPressure,event.espnNGSPassRush2FirstPressure
+espnNGSPassRush1Unblocked,GAME_EVENT,FLAG,espnNGSPassRush1Unblocked,event.espnNGSPassRush1Unblocked
+espnNGSPassRush1SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush1SecondaryBlockerId,event.espnNGSPassRush1SecondaryBlockerId
+espnNGSPassRush1SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush1SecondaryBlock,event.espnNGSPassRush1SecondaryBlock
+espnNGSPassRush1PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush1PrimaryBlockerId,event.espnNGSPassRush1PrimaryBlockerId
+espnNGSPassRush1PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush1PrimaryBlock,event.espnNGSPassRush1PrimaryBlock
+espnNGSPassRush1FirstPressure,GAME_EVENT,FLAG,espnNGSPassRush1FirstPressure,event.espnNGSPassRush1FirstPressure
+espnNGSPassRush10Unblocked,GAME_EVENT,FLAG,espnNGSPassRush10Unblocked,event.espnNGSPassRush10Unblocked
+espnNGSPassRush10SecondaryBlockerId,GAME_EVENT,INT,espnNGSPassRush10SecondaryBlockerId,event.espnNGSPassRush10SecondaryBlockerId
+espnNGSPassRush10SecondaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush10SecondaryBlock,event.espnNGSPassRush10SecondaryBlock
+espnNGSPassRush10PrimaryBlockerId,GAME_EVENT,INT,espnNGSPassRush10PrimaryBlockerId,event.espnNGSPassRush10PrimaryBlockerId
+espnNGSPassRush10PrimaryBlock,GAME_EVENT_ENTITY,FLAG,espnNGSPassRush10PrimaryBlock,event.espnNGSPassRush10PrimaryBlock
+espnNGSCoverageSplitRB,GAME_EVENT,ENUM,Split RB,event.espnNGSCoverageSplitRB
+espnNGSCoverageRightCBCushionAtSnap,GAME_EVENT,FLOAT,Right CB Cushion at Snap,event.espnNGSCoverageRightCBCushionAtSnap
+espnNGSCoveragePresnapShell,GAME_EVENT,INT,Presnap Shell,event.espnNGSCoveragePresnapShell
+espnNGSCoveragePresnapRead,GAME_EVENT,ENUM,Presnap Read,event.espnNGSCoveragePresnapRead
+espnNGSCoveragePresnapMotion,GAME_EVENT,ENUM,Presnap Motion,event.espnNGSCoveragePresnapMotion
+espnNGSCoveragePresnapManProb,GAME_EVENT,FLOAT,Presnap Man Coverage Odds,event.espnNGSCoveragePresnapManProb
+espnNGSCoverageNumRushers,GAME_EVENT,INT,Pass Blocker Count,event.espnNGSCoverageNumRushers
+espnNGSCoverageNumReceivers,GAME_EVENT,INT,Routes Run Count,event.espnNGSCoverageNumReceivers
+espnNGSCoverageNumInCoverage,GAME_EVENT,INT,Coverage Count,event.espnNGSCoverageNumInCoverage
+espnNGSCoverageNumBlockers,GAME_EVENT,INT,Pass Blocker Count,event.espnNGSCoverageNumBlockers
+espnNGSCoverageLeftCBCushionAtSnap,GAME_EVENT,FLOAT,Left CB Cushion at Snap,event.espnNGSCoverageLeftCBCushionAtSnap
+espnNGSCoverageActual,GAME_EVENT,ENUM,Actual Coverage Type,event.espnNGSCoverageActual
