@@ -104,6 +104,7 @@ model_data <- three_straight_scores |>
 
 library(brms)
 library(tidybayes)
+library(scales)
 
 # Housekeeping...
 # Use the cmdstanr backend for Stan because it's faster and more modern than the
@@ -137,10 +138,10 @@ pp_check(sb_model, ndraws = 500) # very nice fit
 
 # make a custom theme for the super bowl
 theme_sb <- function() {
-  theme_minimal(base_family = "LibreFranklin") +
+  theme_minimal(base_family = "FiraSans") +
     theme(panel.grid.minor = element_blank(),
           plot.title = element_text(family = "LibreFranklin", face = "bold"),
-          axis.title = element_text(family = "LibreFranklin"),
+          axis.title = element_text(family = "FiraSans"),
           strip.text = element_text(family = "LibreFranklin",
                                     size = rel(1), hjust = 0),
           strip.background = element_rect(fill = "grey80", color = NA))
@@ -154,13 +155,25 @@ plot(ce1, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
        title = "HIGHER TOTALS MEAN A HIGHER CHANCE FOR THREE SCORES",
        subtitle = "Meanwhile the spread doesn't seem to matter")
 
+
+wager <- c(50, .668)
 # let's look at the indicator for playoff games
-ce2 <- conditional_effects(sb_model, effects = "total:playoff")
+ce2 <- conditional_effects(sb_model, effects = "total")
 plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
+  geom_point(aes(x = wager[1], y = wager[2]), size = 3, shape = 21, color = "gray", fill = "orange") +
+  geom_line(size = 1, color = "black") +
+  geom_ribbon(aes(ymin = lower__, ymax = upper__), alpha = 0, color = "gray") +
   theme_sb() +
-  labs(x = "Total", y = "Probability of 3 scores in a row",
-       title = "Games feature three straight scores less often in the playoffs",
-       subtitle = "")
+  labs(x = '"Vegas" total', y = "Probability of 3 scores in a row",
+       title = "Prop on the probability of three straight scores is mispriced",
+       subtitle = "Conditional effects of the betting markets' point total and on the probability\nof three consecutive scores",
+       caption = "SOURCE: NFLFASTR") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  annotate(
+    geom = "curve", x = 45, y = .73, xend = 49.4, yend = .668, 
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate(geom = "text", x = 41, y = .75, label = "Super Bowl prop", hjust = "left")
 
 # grab a bunch of draws from the model
 predicted_values <- model_data |> 
@@ -224,3 +237,42 @@ prop_odds$vig
 prop_odds$vig_prob1 - mean(the_super_bowl$.prediction) - + prop_odds$vig
 # we still have a positive expected value bet. Our edge is 5 percentage points, which is pretty large. We should bet "No"
 
+# But how confident should we be that the betonline implied probability is different from our estimate of the true probability?
+library(boot)
+
+# function to find the mean
+the_mean <- function(data, indices) {
+  d <- data[indices] # allows boot to select sample
+  return(mean(d))
+}
+
+boot.means <- boot(data = the_super_bowl$.prediction, statistic = the_mean, R = 10000, parallel = "multicore") # boot with 500 iterations.
+data <- as_tibble(boot.means$t)
+colnames(data) <- c("probability_of_three_scores") # fix up the col name
+
+data |>
+  ggplot(aes(x = probability_of_three_scores)) +
+  geom_histogram(bins = 65,
+                 color="#ffffff", 
+                 fill="#E77349", ) +
+  geom_vline(xintercept = prop_odds$vig_prob1 - prop_odds$vig, color = "#000000", linetype="dotted") +
+  geom_vline(xintercept = prop_odds$vig_prob1, color = "gray", linetype="solid") +
+  annotate("text", x = 0.636, y = 650, label = "Implied probabability\nof the SB prop before\nand after accounting for\n the sportsbook's profit", size = 3) +
+  # annotate(
+  #   geom = "curve", x = 45, y = .73, xend = 49.4, yend = .668, 
+  #   curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  # ) +
+  annotate('rect', xmin = 0.605, xmax = 0.668, ymin = 0, ymax = 800, alpha=.2, fill='gray') +
+  annotate("segment", x = 0.490, xend = 0.68, y = 0, yend = 0, colour = "gray") +
+  geom_segment(x = 0.666, y = 400, xend = 0.607, yend = 400, linewidth = .75, arrow = arrow(length = unit(0.20,"cm")), lineend = "butt", linejoin = "round", size = 1, color = "black") +
+  theme_sb() +
+  labs(title = "The three straight scores prop is a good bet even after the vig",
+       x = "Liklihood of three straight scores", y = "",
+       subtitle = "Liklihood of three stright scores drawn from 10,000 simulations vs. prop\nimplied probability less the vigorish",
+       caption = "SOURCE: NFLFASTR") +
+  theme(panel.grid.minor.y = element_blank(),
+        axis.text.y=element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_blank()) +
+  scale_x_continuous(limits = c(0.490, 0.68))
