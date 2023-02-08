@@ -70,6 +70,7 @@ three_straight_scores <- scoring_drives |>
 
 view(three_straight_scores)
 
+# find the number of games with at least one instance of three scores in a row
 three_straight_scores |> 
   ungroup() |> 
   mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
@@ -80,9 +81,12 @@ three_straight_scores |>
   # now group by season to we can count the number of games that had at least one three in a row scoring event
   summarize(three_in_a_row = sum(three_in_a_row))
 # 3317 occurrences
+
+# find the number of games
 as_tibble(unique(three_straight_scores$game_id)) |> nrow()
 # 6159 games
 
+# find the share of games with an instance of three scores in a row
 three_straight_scores |>
   ungroup() |>
   mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
@@ -117,8 +121,8 @@ pct_of_games <- three_straight_scores |>
   # now group by season to we can count the number of games that had at least one three in a row scoring event
   group_by(season) |> 
   summarise(pct = mean(three_in_a_row))
-# I'd also like to see how many times this has happened in a Super Bowl
 
+# I'd also like to see how many times this has happened in a Super Bowl
 super_bowls <- three_straight_scores |>
   ungroup() |>
   # there are NA generated because of the lead() function. make them 0
