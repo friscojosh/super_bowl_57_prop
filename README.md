@@ -9,6 +9,7 @@ Play by play data is from `nflreadr`. The columns I used were:
 - `game_id`: alpha-numeric game id
 - `old_game_id`: gsis_id used by the NFL, just in case
 - `week`: the week of the season
+- `season`: the season
 - `posteam`: the team possessing the ball
 - `defteam`: the team on defense
 - `drive`: Numeric drive number in the game.
