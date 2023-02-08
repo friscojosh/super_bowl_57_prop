@@ -27,7 +27,7 @@ view(prop_odds)
 # the true probability of either team scoring three times in a row is +/- 6.3%
 # from the implied probability of 66.8% to break even on the wager
 
-# get play by play data to calculate % of drives ending in a score
+# get play by play data
 # goal is to get a global base rate for all teams for reg and post-season.
 # Then we'll look at just the post-season.
 # And finally we'll calculate it using only teams with similar odds as 
