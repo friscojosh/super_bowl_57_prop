@@ -16,9 +16,9 @@ dec_odds <- odds.us2dec(odds)
 # 1) overround = (2vig - 1)/(1 - vig) 
 # 2) vig = (overround - 1)/overround
 # explainer here: https://www.matterofstats.com/what-is-vig-and-overround
-prop_odds <- tibble(vig_prob1 = probs[1],
+prop_odds <- dplyr::tibble(vig_prob1 = probs[1],
                     vig_prob2 = probs[2]) |>
-  mutate(overround = ((1/ dec_odds[1]) + (1 / dec_odds[2])),
+  dplyr::mutate(overround = ((1/ dec_odds[1]) + (1 / dec_odds[2])),
          vig = (overround - 1) / overround)
 
 view(prop_odds)
