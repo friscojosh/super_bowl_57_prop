@@ -294,7 +294,7 @@ prop_odds$vig
 # 6.3%
 # putting it all together
 prop_odds$vig_prob1 - mean(the_super_bowl_bet$.prediction) - + prop_odds$vig
-# we still have a positive expected value bet. Our edge is 5 percentage points, which is pretty large. We should bet "No"
+# we still have a positive expected value bet. Our edge is 5.4 percentage points, which is pretty large. We should bet "No"
 
 # But how confident should we be that the betonline implied probability is different from our estimate of the true probability?
 library(boot)
@@ -307,6 +307,7 @@ the_mean <- function(data, indices) {
 boot.means <- boot(data = the_super_bowl_bet$.prediction, statistic = the_mean, R = 10000, parallel = "multicore")
 data <- as_tibble(boot.means$t)
 colnames(data) <- c("probability_of_three_scores") # fix up the col name
+
 # making the cleanest version of the chart that I can for charts.
 data |>
   ggplot(aes(x = probability_of_three_scores)) +
