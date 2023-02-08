@@ -97,7 +97,7 @@ three_straight_scores |>
 # 53.9% of games had at least one "three scores in a row" event, well below the 66.8% implied probability
 
 # let's make a table for the article
-occurances <- three_straight_scores |> 
+occurrences <- three_straight_scores |> 
   dplyr::ungroup() |>
   # there are NA generated because of the lead() function. make them 0
   dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
@@ -141,7 +141,7 @@ super_bowls <- three_straight_scores |>
 mean(super_bowls$sb_three_in_a_row)
 # 64% of super bowls had three scores in a row -- 0.6363636
 
-table <- occurances |>
+table <- occurrences |>
   dplyr::inner_join(pct_of_games, by = "season") |>
   dplyr::left_join(super_bowls, by = "season") |>
   dplyr::select(-sb_game_check)
@@ -159,7 +159,7 @@ model_data <- three_straight_scores |>
             total = max(total),
             spread = max(spread),
             playoff = as.factor(max(playoff)),
-            season = as.factor(season))
+            season = as.factor(max(season))))
 
 library(brms)
 library(tidybayes)
