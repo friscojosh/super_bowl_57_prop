@@ -193,19 +193,37 @@ sb_model2 <- brms::brm(formula = three_in_a_row ~ (1 | season) + total + spread 
                       cores = 12, # change if you need to
                       seed = 6969)
 
-summary(sb_model2)
-plot(sb_model2)
-pp_check(sb_model2, ndraws = 500) # very nice fit
-
-# save the model
-write_rds(sb_model, "sb_model.rds")
-# read the model
-sb_model <- read_rds("sb_model.rds")
+sb_model3 <- brms::brm(formula = three_in_a_row ~ (1 | season) + total + spread + playoff,  # let the intercept vary by season
+                       data = model_data, 
+                       family = bernoulli(link = "logit"), # do binary logistic regression with brms
+                       warmup = 500, 
+                       iter = 2000, 
+                       chains = 6, # change if you need to
+                       cores = 12, # change if you need to
+                       seed = 58)
 
 # some general checks
 summary(sb_model)
 plot(sb_model)
 pp_check(sb_model, ndraws = 500) # very nice fit
+
+summary(sb_model2)
+plot(sb_model2)
+pp_check(sb_model2, ndraws = 500) # very nice fit
+
+summary(sb_model3)
+plot(sb_model3)
+pp_check(sb_model3, ndraws = 500) # very nice fit
+
+# save the model
+write_rds(sb_model, "sb_model.rds")
+write_rds(sb_model2, "sb_model2.rds")
+write_rds(sb_model3, "sb_model3.rds")
+# read the model
+sb_model <- read_rds("sb_model.rds")
+sb_model2 <- read_rds("sb_model2.rds")
+sb_model3 <- read_rds("sb_model3.rds")
+
 
 # make a custom theme for the super bowl
 theme_sb <- function() {
@@ -250,7 +268,7 @@ plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
 
 # grab a bunch of draws from the model
 predicted_values <- model_data |> 
-  add_predicted_draws(sb_model2, allow_new_levels = TRUE,
+  add_predicted_draws(sb_model, allow_new_levels = TRUE,
                       ndraws = 100,
                       seed = 12) |> 
   ungroup()
@@ -306,40 +324,4 @@ prop_odds$vig
 # 6.3%
 # putting it all together
 prop_odds$vig_prob1 - mean(the_super_bowl_bet$.prediction) - prop_odds$vig
-# we still have a positive expected value bet. Our edge is 5.4 percentage points, which is pretty large. We should bet "No"
-
-# But how confident should we be that the betonline implied probability is different from our estimate of the true probability?
-library(boot)
-# function to find the mean
-the_mean <- function(data, indices) {
-  d <- data[indices] # allows boot to select sample
-  return(mean(d))
-}
-# bootstrap 10,000 means using the draws. Why 10,000? no idea.
-boot.means <- boot(data = the_super_bowl_bet$.prediction, statistic = the_mean, R = 10000, parallel = "multicore")
-data <- as_tibble(boot.means$t)
-colnames(data) <- c("probability_of_three_scores") # fix up the col name
-
-# making the cleanest version of the chart that I can for charts.
-data |>
-  ggplot(aes(x = probability_of_three_scores)) +
-  geom_histogram(bins = 65,
-                 color="#ffffff", 
-                 fill="#E77349", ) +
-  geom_vline(xintercept = prop_odds$vig_prob1 - prop_odds$vig, color = "#000000", linetype="dotted") +
-  # geom_vline(xintercept = prop_odds$vig_prob1, color = "gray", linetype="solid") +
-  annotate("text", x = 0.636, y = 650, label = "Implied probabability\nof the SB prop before\nand after accounting for\n the sportsbook's profit", size = 3) +
-  annotate('rect', xmin = 0.605, xmax = 0.668, ymin = 0, ymax = 800, alpha=.2, fill='gray') +
-  annotate("segment", x = 0.490, xend = 0.68, y = 0, yend = 0, colour = "gray") +
-  geom_segment(x = 0.666, y = 400, xend = 0.607, yend = 400, linewidth = .75, arrow = arrow(length = unit(0.20,"cm")), lineend = "butt", linejoin = "round", size = 1, color = "black") +
-  theme_sb() +
-  labs(title = '"No" on three straight scores is a good bet even after the vig',
-       x = "Liklihood of three straight scores", y = "",
-       subtitle = "Liklihood of three straight scores drawn from 10,000 simulations vs. the bet's\nimplied probability, less the sportsbook's profit or 'vigorish'",
-       caption = "SOURCE: NFLFASTR") +
-  theme(panel.grid.minor.y = element_blank(),
-        axis.text.y=element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_blank()) +
-  scale_x_continuous(limits = c(0.490, 0.68), labels = scales::percent_format())
+# we still have a positive expected value bet. Our edge is -5.1 percentage points, which is pretty large. We can't overcome the vig
