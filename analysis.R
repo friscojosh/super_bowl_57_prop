@@ -159,8 +159,7 @@ model_data <- three_straight_scores |>
             total = max(total),
             spread = max(spread),
             playoff = as.factor(max(playoff)),
-            season = as.factor(max(season)))
-
+            season = as.factor(season))
 
 library(brms)
 library(tidybayes)
@@ -184,6 +183,19 @@ sb_model <- brms::brm(formula = three_in_a_row ~ (1 | season) + total + spread +
                           cores = 12, # change if you need to
                           seed = 57)
 # NOTE: Total execution time: 395.5 seconds.
+
+sb_model2 <- brms::brm(formula = three_in_a_row ~ (1 | season) + total + spread + playoff,  # let the intercept vary by season
+                      data = model_data, 
+                      family = bernoulli(link = "logit"), # do binary logistic regression with brms
+                      warmup = 500, 
+                      iter = 2000, 
+                      chains = 6, # change if you need to
+                      cores = 12, # change if you need to
+                      seed = 6969)
+
+summary(sb_model2)
+plot(sb_model2)
+pp_check(sb_model2, ndraws = 500) # very nice fit
 
 # save the model
 write_rds(sb_model, "sb_model.rds")
@@ -238,7 +250,7 @@ plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
 
 # grab a bunch of draws from the model
 predicted_values <- model_data |> 
-  add_predicted_draws(sb_model, allow_new_levels = TRUE,
+  add_predicted_draws(sb_model2, allow_new_levels = TRUE,
                       ndraws = 100,
                       seed = 12) |> 
   ungroup()
@@ -280,9 +292,9 @@ predicted_values |>
 the_super_bowl_bet <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "playoff" = 1)
 # predict it
 the_super_bowl_bet <- the_super_bowl_bet |>
-  tidybayes::add_predicted_draws(sb_model, allow_new_levels = TRUE,
+  tidybayes::add_predicted_draws(sb_model2, allow_new_levels = TRUE,
                       ndraws = 1000,
-                      seed = 12)
+                      seed = 1580)
 
 mean(the_super_bowl_bet$.prediction)
 # 55% is the model's guess at the true probability of three scores in a row in the super bowl
