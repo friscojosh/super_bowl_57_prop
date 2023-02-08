@@ -1,6 +1,5 @@
 library(tidyverse)
 library(nflreadr)
-library(httr)
 library(odds.converter)
 # prop to analyze: 3 straight scores by either team. 
 # odds: yes -201 no +150
@@ -60,10 +59,10 @@ scoring_drives <- nflreadr_pbp_clean |>
 
 # identify instances where three consecutive scores occur in a game.
 three_straight_scores <- scoring_drives |>
-  group_by(game_id) |>
+  dplyr::group_by(game_id) |>
   # to make this intuitive in the results, we have to code it in a way that is slightly confusing.
   # instead of starting with a drive and counting forwards, we find a drive and then count backwards in time.
-  mutate(three_in_a_row = ifelse(lag(drive_ended_with_score, n = 2) == 1 & 
+  dplyr::mutate(three_in_a_row = ifelse(lag(drive_ended_with_score, n = 2) == 1 & 
                                  lag(drive_ended_with_score, n = 1) == 1 & 
                                  drive_ended_with_score == 1, 1, 0)) |> 
   dplyr::select(game_id, old_game_id, week, posteam, defteam, fixed_drive, drive_ended_with_score, three_in_a_row, spread, total, playoff, season)
@@ -72,14 +71,14 @@ view(three_straight_scores)
 
 # find the number of games with at least one instance of three scores in a row
 three_straight_scores |> 
-  ungroup() |> 
-  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
+  dplyr::ungroup() |> 
+  dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
          three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |>
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 (or 0) at this grouping level
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 (or 0) at this grouping level
             season = max(season)) |> 
   # now group by season to we can count the number of games that had at least one three in a row scoring event
-  summarize(three_in_a_row = sum(three_in_a_row))
+  dplyr::summarize(three_in_a_row = sum(three_in_a_row))
 # 3317 occurrences
 
 # find the number of games
@@ -88,75 +87,75 @@ as_tibble(unique(three_straight_scores$game_id)) |> nrow()
 
 # find the share of games with an instance of three scores in a row
 three_straight_scores |>
-  ungroup() |>
-  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
+  dplyr::ungroup() |>
+  dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
          three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |>
   # group by game first to make make sure we only count one three in a row event per game, since that's all we need
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row)) |>
-  summarise(pct = mean(three_in_a_row))
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(three_in_a_row = max(three_in_a_row)) |>
+  dplyr::summarise(pct = mean(three_in_a_row))
 # 53.9% of games had at least one "three scores in a row" event, well below the 66.8% implied probability
 
 # let's make a table for the article
 occurances <- three_straight_scores |> 
-  ungroup() |>
+  dplyr::ungroup() |>
   # there are NA generated because of the lead() function. make them 0
-  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
   # group by game first to make make sure we only count one three in a row event per game, since that's all we need
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
             season = max(season)) |> 
   # now group by season to we can count the number of games that had at least one three in a row scoring event
-  group_by(season) |> 
-  summarize(three_in_a_row = sum(three_in_a_row))
+  dplyr::group_by(season) |> 
+  dplyr::summarize(three_in_a_row = sum(three_in_a_row))
 
 pct_of_games <- three_straight_scores |>
-  ungroup() |>
+  dplyr::ungroup() |>
   # there are NA generated because of the lead() function. make them 0
-  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
   # group by game first to make make sure we only count one three in a row event per game, since that's all we need
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
             season = max(season)) |> 
   # now group by season to we can count the number of games that had at least one three in a row scoring event
-  group_by(season) |> 
-  summarise(pct = mean(three_in_a_row))
+  dplyr::group_by(season) |> 
+  dplyr::summarise(pct = mean(three_in_a_row))
 
 # I'd also like to see how many times this has happened in a Super Bowl
 super_bowls <- three_straight_scores |>
-  ungroup() |>
+  dplyr::ungroup() |>
   # there are NA generated because of the lead() function. make them 0
-  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  dplyr::mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
   # group by game first to make make sure we only count one three in a row event per game, since that's all we need
-  group_by(game_id) |>
-  summarize(sb_three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(sb_three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
             season = max(season),
             week = max(week)) |>
   # now group by season to we can count the number of games that had at least one three in a row scoring event
-  group_by(season) |> 
-  filter(week == max(week), # this will give us the final game of the year, the Super Bowl
+  dplyr::group_by(season) |> 
+  dplyr::filter(week == max(week), # this will give us the final game of the year, the Super Bowl
          season != 2022) |> # this year's SB has not happened yet!
-  summarize(sb_three_in_a_row = max(sb_three_in_a_row),
+  dplyr::summarize(sb_three_in_a_row = max(sb_three_in_a_row),
             sb_game_check = n()) # this needs to be one. if it isn't there is a problem
 
 mean(super_bowls$sb_three_in_a_row)
 # 64% of super bowls had three scores in a row -- 0.6363636
 
 table <- occurances |>
-  inner_join(pct_of_games, by = "season") |>
-  left_join(super_bowls, by = "season") |>
+  dplyr::inner_join(pct_of_games, by = "season") |>
+  dplyr::left_join(super_bowls, by = "season") |>
   dplyr::select(-sb_game_check)
 # export for carpenter
-write_csv(table, "table.csv")
+readr::write_csv(table, "table.csv")
 
 # is there a relationship between Vegas team total or spread and the likelihood of three consecutive scores in a game?
 # the super bowl has a relatively high total of 50. Also the scoring environment has increased since 2010, so we need to account for season
 model_data <- three_straight_scores |>
-  ungroup() |>
-  filter(!is.na(three_in_a_row), # lead() creates NAs that we don't need
+  dplyr::ungroup() |>
+  dplyr::filter(!is.na(three_in_a_row), # lead() creates NAs that we don't need
          season >= 2010) |> # we don't need all the data for this model
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row), # after checking, max() did the job in the last operation, so we'll just use it alone
+  dplyr::group_by(game_id) |>
+  dplyr::summarize(three_in_a_row = max(three_in_a_row), # after checking, max() did the job in the last operation, so we'll just use it alone
             total = max(total),
             spread = max(spread),
             playoff = as.factor(max(playoff)),
@@ -175,7 +174,7 @@ options(mc.cores = 64, # change if you need to
          brms.backend = "cmdstanr")
 
 # the multi-level binary logistic regression model
-sb_model <- brm(formula = three_in_a_row ~ (1 | season) + total + spread + playoff,  # let the intercept vary by season
+sb_model <- brms::brm(formula = three_in_a_row ~ (1 | season) + total + spread + playoff,  # let the intercept vary by season
                           data = model_data, 
                           family = bernoulli(link = "logit"), # do binary logistic regression with brms
                           warmup = 500, 
@@ -257,8 +256,8 @@ predicted_values |>
 # a simple table or chart (bar chart?) of these means is probably best
 # for communicating the change over time
 predicted_values |>
-  group_by(season) |>
-  summarise(three_in_a_row_prob = mean(.prediction))
+  dplyr::group_by(season) |>
+  dplyr::summarise(three_in_a_row_prob = mean(.prediction))
 # A tibble: 13 × 2
 # season three_in_a_row_prob
 # <fct>                <dbl>
@@ -280,7 +279,7 @@ predicted_values |>
 the_super_bowl_bet <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "playoff" = 1)
 # predict it
 the_super_bowl_bet <- the_super_bowl_bet |>
-  add_predicted_draws(sb_model, allow_new_levels = TRUE,
+  tidybayes::add_predicted_draws(sb_model, allow_new_levels = TRUE,
                       ndraws = 1000,
                       seed = 12)
 
