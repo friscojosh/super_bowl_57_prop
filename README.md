@@ -12,7 +12,7 @@ Play by play data is from `nflreadr`. The columns I used were:
 - `season`: the season
 - `posteam`: the team possessing the ball
 - `defteam`: the team on defense
-- `drive`: Numeric drive number in the game.
+- `fixed_drive`: Numeric drive number in the game. `fixed_drive` fixes issues with the official drive variable in the 2013 playoffs, in particular.
 - `fixed_drive_result`: How a drive ended. Possible values: Punt, Touchdown, Turnover, Field goal, Turnover on downs, End of half, Missed field goal, Opp touchdown, Safety, NA
 - `drive_ended_with_score`: Binary indicator the drive ended with a score. Inferred from `fixed_drive_result`
 - `spread_line`: The closing spread line for the game. A positive number means the home team was favored by that many points, a negative number means the away team was favored by that many points. (Source: Pro-Football-Reference)
