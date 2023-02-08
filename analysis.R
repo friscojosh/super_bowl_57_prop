@@ -34,7 +34,7 @@ view(prop_odds)
 # the Chiefs and Eagles, which is currently Eagles -1.5 (-110) Chiefs 1.5 (-110)
 # with an over/under of 50 points scored
 
-# grab the last thirteen years of data
+# grab the last 23 years of data
 nflreadr_pbp <- load_pbp(2000:2022)
 
 # clean up some of the plays with no posteam and defteam
