@@ -235,7 +235,8 @@ plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
 # grab a bunch of draws from the model
 predicted_values <- model_data |> 
   add_predicted_draws(sb_model, allow_new_levels = TRUE,
-                      ndraws = 100) |> 
+                      ndraws = 100,
+                      seed = 12) |> 
   ungroup()
 
 # plot 'em faceted on season
@@ -276,9 +277,11 @@ the_super_bowl_bet <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "pla
 # predict it
 the_super_bowl_bet <- the_super_bowl_bet |>
   add_predicted_draws(sb_model, allow_new_levels = TRUE,
-                      ndraws = 1000)
+                      ndraws = 1000,
+                      seed = 12)
+
 mean(the_super_bowl_bet$.prediction)
-# 55.4% is the model's guess at the true probability of three scores in a row in the super bowl
+# 55% is the model's guess at the true probability of three scores in a row in the super bowl
 # the sportsbook's implied probability is:
 prop_odds$vig_prob1
 # 66.8%
