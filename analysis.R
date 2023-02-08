@@ -11,7 +11,6 @@ library(odds.converter)
 odds <- c(-201, 150)
 probs <- odds.us2prob(odds)
 dec_odds <- odds.us2dec(odds)
-
 # add vig -- the profit or tax imposed by the sports book -- and overround
 # This assumes no draws and that the overround is even distributed between the yes and no bet.
 # vig  and the overrorund are related mathematically by the following 2 equations:
@@ -22,8 +21,8 @@ prop_odds <- tibble(vig_prob1 = probs[1],
                     vig_prob2 = probs[2]) |>
   mutate(overround = ((1/ dec_odds[1]) + (1 / dec_odds[2])),
          vig = (overround - 1) / overround)
-view(prop_odds)
 
+view(prop_odds)
 # So, for this bet to be positive expected value, we would need to estimate that
 # the true probability of either team scoring three times in a row is +/- 6.3%
 # from the implied probability of 66.8% to break even on the wager
@@ -36,19 +35,20 @@ view(prop_odds)
 # with an over/under of 50 points scored
 
 # grab the last thirteen years of data
-nflreadr_pbp <- load_pbp(2010:2022)
+nflreadr_pbp <- load_pbp(2000:2022)
 
 # clean up some of the plays with no posteam and defteam
 # these are rows indicating the game started, timeout was taken, two min warning, etc.
 not_needed <- c("GAME|END QUARTER|Two-Minute Warning|Timeout|END GAME")
 nflreadr_pbp_clean <- nflreadr_pbp |> dplyr::filter(!str_detect(desc, not_needed))
-
 # identify scoring drives. any score will do. drives are numbered in the order in which they occurred in the game.
 # special teams scores (punt returns for TDs etc.) are captured. See 2020_03_KC_BAL, drive #5 for an example.
 scoring_drives <- nflreadr_pbp_clean |>
   dplyr::mutate(playoff = ifelse(season <= 2020 & week > 17, 1,
-                                 ifelse(season > 2020 & week > 18, 1, 0))) |> 
-  dplyr::group_by(game_id, old_game_id, posteam, defteam, drive) |> # roll up the data to the team-drive level
+                                 ifelse(season > 2020 & week > 18, 1, 0)),
+                # create a binary variable that indicates a drive ended with a score.
+                drive_ended_with_score = ifelse(fixed_drive_result %in% c("Touchdown", "Field goal", "Opp touchdown", "Safety"), 1, 0)) |> 
+  dplyr::group_by(game_id, old_game_id, posteam, defteam, fixed_drive) |> # roll up the data to the team-drive level. fixed drive is needed for 2013 playoff data
   dplyr::summarise(drive_ended_with_score = max(drive_ended_with_score),
             week = max(week),
             spread = max(spread_line), # just taking max to keep these in the result
@@ -56,7 +56,7 @@ scoring_drives <- nflreadr_pbp_clean |>
             playoff = max(playoff),
             season = max(season)) |>  # just taking max to keep these in the result
   ungroup() |>
-  dplyr::arrange(game_id, drive) # ensure drives are in the order they occur so we can do lag/lead stuff
+  dplyr::arrange(game_id, fixed_drive) # ensure drives are in the order they occur so we can do lag/lead stuff
 
 # identify instances where three consecutive scores occur in a game.
 three_straight_scores <- scoring_drives |>
@@ -66,32 +66,91 @@ three_straight_scores <- scoring_drives |>
   mutate(three_in_a_row = ifelse(lag(drive_ended_with_score, n = 2) == 1 & 
                                  lag(drive_ended_with_score, n = 1) == 1 & 
                                  drive_ended_with_score == 1, 1, 0)) |> 
-  dplyr::select(game_id, old_game_id, week, posteam, defteam, drive, drive_ended_with_score, three_in_a_row, spread, total, playoff, season)
+  dplyr::select(game_id, old_game_id, week, posteam, defteam, fixed_drive, drive_ended_with_score, three_in_a_row, spread, total, playoff, season)
+
 view(three_straight_scores)
 
 three_straight_scores |> 
   ungroup() |> 
-  filter(!is.na(three_in_a_row)) |> 
+  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
+         three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |>
+  group_by(game_id) |>
+  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+            season = max(season)) |> 
+  # now group by season to we can count the number of games that had at least one three in a row scoring event
   summarize(three_in_a_row = sum(three_in_a_row))
-# 2968 occurrences
-
+# 3317 occurrences
 as_tibble(unique(three_straight_scores$game_id)) |> nrow()
-# 3507 games
+# 6159 games
 
 three_straight_scores |>
   ungroup() |>
-  filter(!is.na(three_in_a_row)) |>
+  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
+         three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |>
+  # group by game first to make make sure we only count one three in a row event per game, since that's all we need
   group_by(game_id) |>
   summarize(three_in_a_row = max(three_in_a_row)) |>
-  mutate(three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |> # just to ensure we didn't get a value over 1 with the max() function for some reason
   summarise(pct = mean(three_in_a_row))
-# 45.2% of games had at least one "three scores in a row" event, well below the 66.8% implied probability
+# 53.9% of games had at least one "three scores in a row" event, well below the 66.8% implied probability
 
-# but is there a relationship between Vegas team total or spread and the likelihood of three consecutive scores in a game?
+# let's make a table for the article
+occurances <- three_straight_scores |> 
+  ungroup() |>
+  # there are NA generated because of the lead() function. make them 0
+  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  # group by game first to make make sure we only count one three in a row event per game, since that's all we need
+  group_by(game_id) |>
+  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+            season = max(season)) |> 
+  # now group by season to we can count the number of games that had at least one three in a row scoring event
+  group_by(season) |> 
+  summarize(three_in_a_row = sum(three_in_a_row))
+
+pct_of_games <- three_straight_scores |>
+  ungroup() |>
+  # there are NA generated because of the lead() function. make them 0
+  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  # group by game first to make make sure we only count one three in a row event per game, since that's all we need
+  group_by(game_id) |>
+  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+            season = max(season)) |> 
+  # now group by season to we can count the number of games that had at least one three in a row scoring event
+  group_by(season) |> 
+  summarise(pct = mean(three_in_a_row))
+# I'd also like to see how many times this has happened in a Super Bowl
+
+super_bowls <- three_straight_scores |>
+  ungroup() |>
+  # there are NA generated because of the lead() function. make them 0
+  mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row)) |>
+  # group by game first to make make sure we only count one three in a row event per game, since that's all we need
+  group_by(game_id) |>
+  summarize(sb_three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+            season = max(season),
+            week = max(week)) |>
+  # now group by season to we can count the number of games that had at least one three in a row scoring event
+  group_by(season) |> 
+  filter(week == max(week), # this will give us the final game of the year, the Super Bowl
+         season != 2022) |> # this year's SB has not happened yet!
+  summarize(sb_three_in_a_row = max(sb_three_in_a_row),
+            sb_game_check = n()) # this needs to be one. if it isn't there is a problem
+
+mean(super_bowls$sb_three_in_a_row)
+# 64% of super bowls had three scores in a row -- 0.6363636
+
+table <- occurances |>
+  inner_join(pct_of_games, by = "season") |>
+  left_join(super_bowls, by = "season") |>
+  dplyr::select(-sb_game_check)
+# export for carpenter
+write_csv(table, "table.csv")
+
+# is there a relationship between Vegas team total or spread and the likelihood of three consecutive scores in a game?
 # the super bowl has a relatively high total of 50. Also the scoring environment has increased since 2010, so we need to account for season
 model_data <- three_straight_scores |>
   ungroup() |>
-  filter(!is.na(three_in_a_row)) |>
+  filter(!is.na(three_in_a_row), # lead() creates NAs that we don't need
+         season >= 2010) |> # we don't need all the data for this model
   group_by(game_id) |>
   summarize(three_in_a_row = max(three_in_a_row), # after checking, max() did the job in the last operation, so we'll just use it alone
             total = max(total),
@@ -108,7 +167,6 @@ library(scales)
 # default rstan. Future Josh or Holly: You need to install the cmdstanr package first.
 # (https://mc-stan.org/cmdstanr/) and then run cmdstanr::install_cmdstan()
 
-# I have 64 cores at the moment.
 options(mc.cores = 64, # change if you need to
          brms.backend = "cmdstanr")
 
@@ -156,14 +214,16 @@ plot(ce1, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
 wager <- c(50, .668) # the details of the wager
 # conditional effects of the total
 ce2 <- conditional_effects(sb_model, effects = "total")
+
+# make a plot
 plot(ce2, plot = FALSE)[[1]] + # so we can treat it like a ggplot object
   geom_point(aes(x = wager[1], y = wager[2]), size = 3, shape = 21, color = "gray", fill = "orange") +
-  geom_line(size = 1, color = "black") +
+  geom_line(size = 1, color = "orange") +
   geom_ribbon(aes(ymin = lower__, ymax = upper__), alpha = 0, color = "gray") +
   theme_sb() +
   labs(x = '"Vegas" total', y = "Probability of 3 scores in a row",
-       title = "Prop on the probability of three straight scores is mispriced",
-       subtitle = "Conditional effects of the betting markets' point total and on the probability\nof three consecutive scores",
+       title = "The liklihood of three straight scores is mispriced",
+       subtitle = "Conditional effects of point total and on the liklihood of three\nconsecutive scores",
        caption = "SOURCE: NFLFASTR") +
   scale_y_continuous(labels = scales::percent_format()) +
   annotate(
@@ -211,89 +271,55 @@ predicted_values |>
 # 12 2021                 0.549
 # 13 2022                 0.463
 
-# need more data to justify a table. Let's add in the number of games three-in-a-row occured.
-# maybe I'll add in a measure to passing efficiency from profootballreference as well since they seem to track.
-occurances <- three_straight_scores |> 
-  ungroup() |> 
-  filter(!is.na(three_in_a_row)) |> 
-  group_by(season) |>
-  summarize(three_in_a_row = sum(three_in_a_row))
-
-pct_of_games <- three_straight_scores |>
-  ungroup() |>
-  filter(!is.na(three_in_a_row)) |>
-  group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row),
-            season = max(season)) |>
-  mutate(three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |> # just to ensure we didn't get a value over 1 with the max() function for some reason
-  group_by(season) |> 
-  summarise(pct = mean(three_in_a_row))
-
-table <- occurances |>
-  inner_join(pct_of_games, by = "season")
-
-# export for carpenter
-write_csv(table, "table.csv")
-
-# let's input the bet we're actually interested in
-the_super_bowl <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "playoff" = 1)
-
+# let's input the bet we're interested in and predict it
+the_super_bowl_bet <- tibble("season" = 2022, "total" = 50, "spread" = 1.5, "playoff" = 1)
 # predict it
-the_super_bowl <- the_super_bowl |>
+the_super_bowl_bet <- the_super_bowl_bet |>
   add_predicted_draws(sb_model, allow_new_levels = TRUE,
                       ndraws = 1000)
-
-mean(the_super_bowl$.prediction)
+mean(the_super_bowl_bet$.prediction)
 # 55.4% is the model's guess at the true probability of three scores in a row in the super bowl
-
 # the sportsbook's implied probability is:
 prop_odds$vig_prob1
 # 66.8%
-
 # the vig on the bet is:
 prop_odds$vig
 # 6.3%
-
 # putting it all together
-prop_odds$vig_prob1 - mean(the_super_bowl$.prediction) - + prop_odds$vig
+prop_odds$vig_prob1 - mean(the_super_bowl_bet$.prediction) - + prop_odds$vig
 # we still have a positive expected value bet. Our edge is 5 percentage points, which is pretty large. We should bet "No"
 
 # But how confident should we be that the betonline implied probability is different from our estimate of the true probability?
 library(boot)
-
 # function to find the mean
 the_mean <- function(data, indices) {
   d <- data[indices] # allows boot to select sample
   return(mean(d))
 }
-
-boot.means <- boot(data = the_super_bowl$.prediction, statistic = the_mean, R = 10000, parallel = "multicore") # boot with 10,000 iterations.
+# bootstrap 10,000 means using the draws. Why 10,000? no idea.
+boot.means <- boot(data = the_super_bowl_bet$.prediction, statistic = the_mean, R = 10000, parallel = "multicore")
 data <- as_tibble(boot.means$t)
 colnames(data) <- c("probability_of_three_scores") # fix up the col name
-
+# making the cleanest version of the chart that I can for charts.
 data |>
   ggplot(aes(x = probability_of_three_scores)) +
   geom_histogram(bins = 65,
                  color="#ffffff", 
                  fill="#E77349", ) +
   geom_vline(xintercept = prop_odds$vig_prob1 - prop_odds$vig, color = "#000000", linetype="dotted") +
-  geom_vline(xintercept = prop_odds$vig_prob1, color = "gray", linetype="solid") +
+  # geom_vline(xintercept = prop_odds$vig_prob1, color = "gray", linetype="solid") +
   annotate("text", x = 0.636, y = 650, label = "Implied probabability\nof the SB prop before\nand after accounting for\n the sportsbook's profit", size = 3) +
-  # annotate(
-  #   geom = "curve", x = 45, y = .73, xend = 49.4, yend = .668, 
-  #   curvature = .3, arrow = arrow(length = unit(2, "mm"))
-  # ) +
   annotate('rect', xmin = 0.605, xmax = 0.668, ymin = 0, ymax = 800, alpha=.2, fill='gray') +
   annotate("segment", x = 0.490, xend = 0.68, y = 0, yend = 0, colour = "gray") +
   geom_segment(x = 0.666, y = 400, xend = 0.607, yend = 400, linewidth = .75, arrow = arrow(length = unit(0.20,"cm")), lineend = "butt", linejoin = "round", size = 1, color = "black") +
   theme_sb() +
-  labs(title = "The three straight scores prop is a good bet even after the vig",
+  labs(title = '"No" on three straight scores is a good bet even after the vig',
        x = "Liklihood of three straight scores", y = "",
-       subtitle = "Liklihood of three stright scores drawn from 10,000 simulations vs. prop\nimplied probability less the vigorish",
+       subtitle = "Liklihood of three straight scores drawn from 10,000 simulations vs. the bet's\nimplied probability, less the sportsbook's profit or 'vigorish'",
        caption = "SOURCE: NFLFASTR") +
   theme(panel.grid.minor.y = element_blank(),
         axis.text.y=element_blank(),
         panel.grid.minor.x = element_blank(),
         panel.grid.major.y = element_blank(),
         panel.grid.major.x = element_blank()) +
-  scale_x_continuous(limits = c(0.490, 0.68))
+  scale_x_continuous(limits = c(0.490, 0.68), labels = scales::percent_format())
