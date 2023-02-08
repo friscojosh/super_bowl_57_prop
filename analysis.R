@@ -159,7 +159,8 @@ model_data <- three_straight_scores |>
             total = max(total),
             spread = max(spread),
             playoff = as.factor(max(playoff)),
-            season = as.factor(max(season))))
+            season = as.factor(max(season)))
+
 
 library(brms)
 library(tidybayes)
