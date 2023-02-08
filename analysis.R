@@ -76,7 +76,7 @@ three_straight_scores |>
   mutate(three_in_a_row = ifelse(is.na(three_in_a_row), 0, three_in_a_row),
          three_in_a_row = ifelse(three_in_a_row > 0, 1, 0)) |>
   group_by(game_id) |>
-  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 at this grouping level
+  summarize(three_in_a_row = max(three_in_a_row), # max() will always return 1 (or 0) at this grouping level
             season = max(season)) |> 
   # now group by season to we can count the number of games that had at least one three in a row scoring event
   summarize(three_in_a_row = sum(three_in_a_row))
