@@ -293,7 +293,7 @@ prop_odds$vig_prob1
 prop_odds$vig
 # 6.3%
 # putting it all together
-prop_odds$vig_prob1 - mean(the_super_bowl_bet$.prediction) - + prop_odds$vig
+prop_odds$vig_prob1 - mean(the_super_bowl_bet$.prediction) - prop_odds$vig
 # we still have a positive expected value bet. Our edge is 5.4 percentage points, which is pretty large. We should bet "No"
 
 # But how confident should we be that the betonline implied probability is different from our estimate of the true probability?
