@@ -11,8 +11,8 @@ odds <- c(-201, 150)
 probs <- odds.us2prob(odds)
 dec_odds <- odds.us2dec(odds)
 # add vig -- the profit or tax imposed by the sports book -- and overround
-# This assumes no draws and that the overround is even distributed between the yes and no bet.
-# vig  and the overrorund are related mathematically by the following 2 equations:
+# This assumes no draws and that the overround is evenly distributed between the yes and no bet.
+# vig and the overrorund are related mathematically by the following 2 equations:
 # 1) overround = (2vig - 1)/(1 - vig) 
 # 2) vig = (overround - 1)/overround
 # explainer here: https://www.matterofstats.com/what-is-vig-and-overround
